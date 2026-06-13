@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calling Taxi - บริการเรียกรถแท็กซี่ 24 ชั่วโมง</title>
+    
+    <!-- ปรับแต่งเพื่อ SEO (ติดหน้าแรก Google) -->
+    <title>Calling Taxi | บริการเหมารถตู้ รถแท็กซี่ไปต่างจังหวัด รับส่งสนามบิน 24 ชม.</title>
+    <meta name="description" content="บริการเรียกรถแท็กซี่ จองรถออนไลน์ 24 ชั่วโมง เหมารถไปต่างจังหวัด รับส่งสนามบิน รถเก๋ง SUV รถตู้ VIP นำเที่ยวทั่วไทย ปลอดภัย ราคาเป็นกันเอง ติดต่อเลย!">
+    <meta name="keywords" content="เหมารถไปต่างจังหวัด, เรียกแท็กซี่ 24 ชม, จองแท็กซี่สนามบิน, รถเหมานำเที่ยว, เช่ารถตู้ vip, calling taxi, แท็กซี่คันใหญ่">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://idetravel.github.io/">
+
+    <!-- Open Graph สำหรับแชร์ลง LINE / Facebook / WhatsApp แล้วขึ้นรูปสวยๆ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://idetravel.github.io/">
+    <meta property="og:title" content="Calling Taxi | บริการเหมารถแท็กซี่ รถตู้ไปต่างจังหวัด 24 ชม.">
+    <meta property="og:description" content="จองรถออนไลน์ง่ายๆ เหมารถตู้นำเที่ยว รับส่งสนามบิน เดินทางปลอดภัยกับคนขับมืออาชีพ">
+    <meta property="og:image" content="banner728_90.jpg"> <!-- สามารถเปลี่ยนเป็นรูปหน้าปกหลักของเว็บได้ -->
+
     <!-- นำเข้า Font สวยๆ จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -32,7 +47,7 @@
             z-index: 100;
         }
 
-        /* โลโก้แบรนด์รวมในกรอบสีเหลือง (รูปภาพคู่กับชื่อแบรนด์) */
+        /* โลโก้แบรนด์รวมในกรอบสีเหลือง */
         .header-logo-wrapper {
             display: flex;
             align-items: center;
@@ -41,7 +56,7 @@
         }
 
         .header-logo-wrapper img {
-            height: 50px; /* ปรับขนาดโลโก้ลงเล็กน้อยเพื่อให้สมดุลกับตัวหนังสือ */
+            height: 50px;
             width: auto;
             border-radius: 50%;
             box-shadow: 0 2px 5px rgba(0,0,0,0.15);
@@ -61,7 +76,6 @@
             margin-left: 5px;
         }
 
-        /* ส่วนควบคุมปุ่มฝั่งขวา (เหลือเฉพาะปุ่มสลับภาษา) */
         .header-right {
             display: flex;
             align-items: center;
@@ -85,7 +99,7 @@
             color: #000;
         }
 
-        /* แถบเมนูย่อย (วางอยู่ใต้กรอบสีเหลือง) */
+        /* แถบเมนูย่อย */
         .sub-nav {
             background-color: #222;
             padding: 12px 5%;
@@ -413,32 +427,31 @@
     <!-- แถบเมนูกรอบสีเหลืองด้านบนสุด -->
     <header>
         <a href="#" class="header-logo-wrapper">
-            <img src="logo.png" alt="Premium Ride Service Logo">
+            <img src="logo.png" alt="Calling Taxi โลโก้บริการรถรับส่ง 24 ชั่วโมง">
             <div class="logo-text">Calling<span>TAXI</span></div>
         </a>
         <div class="header-right">
-            <!-- ปุ่มสลับภาษา -->
             <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">EN</button>
         </div>
     </header>
 
-    <!-- แถบเมนูย่อย -->
-    <div class="sub-nav">
+    <!-- แถบเมนูย่อยช่วยการนำทางของบอต Google -->
+    <nav class="sub-nav" aria-label="Main Navigation">
         <a href="#booking" id="nav-booking">จองรถออนไลน์</a>
         <a href="#fleet" id="nav-fleet">ประเภทรถที่ให้บริการ</a>
-    </div>
+    </nav>
 
-    <!-- ส่วนหัวโปรโมทหน้าเว็บ -->
+    <!-- ส่วนหัวโปรโมทหน้าเว็บ (คีย์เวิร์ดหลัก h1) -->
     <section class="hero">
-        <h1 id="hero-title">Calling Taxi</h1>
+        <h1 id="hero-title">Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย</h1>
         <p id="hero-desc">บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
     </section>
 
-    <!-- คอนเทนต์หลัก -->
-    <div class="main-container" id="booking">
+    <!-- คอนเทนต์หลักเพื่อการทำ SEO -->
+    <main class="main-container" id="booking">
         
-        <!-- แบบฟอร์มกรอกข้อมูลเรียกแท็กซี่ -->
-        <div class="card">
+        <!-- แบบฟอร์มจองรถ -->
+        <section class="card" aria-labelledby="form-title">
             <h2 id="form-title">🚕 จองรถแท็กซี่ออนไลน์</h2>
             <form id="taxiForm" onsubmit="bookTaxi(event)">
                 <div class="form-group">
@@ -463,10 +476,10 @@
                 </div>
                 <button type="submit" class="btn-submit" id="btn-submit">ส่งข้อมูลเพื่อเรียกรถ</button>
             </form>
-        </div>
+        </section>
 
-        <!-- ช่องทางการติดต่อโดยตรง -->
-        <div class="card">
+        <!-- ช่องทางการติดต่อ -->
+        <section class="card" aria-labelledby="contact-title">
             <h2 id="contact-title">💬 ช่องทางติดต่อตรง</h2>
             
             <div class="contact-methods">
@@ -483,60 +496,60 @@
             <div class="qr-grid">
                 <!-- WeChat QR Code -->
                 <div class="qr-box">
-                    <img src="wechat.jpg" alt="WeChat QR">
+                    <img src="wechat.jpg" alt="WeChat QR Code สำหรับติดต่อรถเหมา Calling Taxi">
                     <p style="color: #07C160;">WeChat</p>
                     <span>Tel: 0852242135</span>
                 </div>
                 <!-- WhatsApp QR Code -->
                 <div class="qr-box">
-                    <img src="whatsapp.jpg" alt="WhatsApp QR">
+                    <img src="whatsapp.jpg" alt="WhatsApp QR Code สำหรับจองรถ Calling Taxi">
                     <p style="color: #25D366;">WhatsApp</p>
                     <span>You Have Trip I have Car</span>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <!-- โซนแสดงรูปรถที่ให้บริการ -->
-    <div class="fleet-container" id="fleet">
+    <!-- โซนแสดงรูปรถยนต์ (ดัก Keyword ใน Image Alt) -->
+    <section class="fleet-container" id="fleet">
         <h2 class="fleet-title" id="fleet-title">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
         <div class="fleet-grid">
             
             <!-- คันที่ 1: Sedan Altis -->
-            <div class="car-card">
+            <article class="car-card">
                 <div class="car-img-wrapper">
-                    <img src="altis.png" alt="Toyota Altis Taxi">
+                    <img src="altis.png" alt="บริการรถแท็กซี่ทั่วไป Sedan Toyota Altis 4 ที่นั่ง">
                 </div>
                 <div class="car-info">
                     <h3 id="car1-title">แท็กซี่ทั่วไป (Sedan)</h3>
                     <p id="car1-desc">รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน</p>
                 </div>
-            </div>
+            </article>
 
             <!-- คันที่ 2: SUV -->
-            <div class="car-card">
+            <article class="car-card">
                 <div class="car-img-wrapper">
-                    <img src="suv.png" alt="SUV Car">
+                    <img src="suv.png" alt="บริการรถเหมาคันใหญ่ SUV รถครอบครัว 7 ที่นั่ง">
                 </div>
                 <div class="car-info">
                     <h3 id="car2-title">รถยนต์อเนกประสงค์ (SUV)</h3>
                     <p id="car2-desc">รถยนต์ไซส์ใหญ่ขนาด 7 ที่นั่ง นั่งสบาย พื้นที่กว้างขวาง เหมาะสำหรับกลุ่มครอบครัวหรือทริปที่มีกระเป๋าเดินทางใบใหญ่</p>
                 </div>
-            </div>
+            </article>
 
             <!-- คันที่ 3: Van -->
-            <div class="car-card">
+            <article class="car-card">
                 <div class="car-img-wrapper">
-                    <img src="van_03.png" alt="VIP Van">
+                    <img src="van_03.png" alt="บริการเช่ารถตู้ VIP Van พร้อมคนขับนำเที่ยว">
                 </div>
                 <div class="car-info">
                     <h3 id="car3-title">รถตู้ VIP (Van)</h3>
                     <p id="car3-desc">รถตู้แต่ง VIP เต็มรูปแบบ สิ่งอำนวยความสะดวกครบครัน เหมาะสำหรับการเดินทางเป็นกลุ่มคณะ สัมมนา หรือท่องเที่ยวทางไกล</p>
                 </div>
-            </div>
+            </article>
 
         </div>
-    </div>
+    </section>
 
     <!-- ส่วนจุดเด่นบริการ -->
     <section class="features">
@@ -554,15 +567,15 @@
         </div>
     </section>
 
-    <!-- ส่วนแสดงแบนเนอร์ก่อนถึง Footer -->
+    <!-- ส่วนแสดงแบนเนอร์ -->
     <div class="banner-container">
-        <img src="banner728_90.jpg" alt="Thailand Travel Tour Banner">
+        <img src="banner728_90.jpg" alt="แบนเนอร์บริการ Calling Taxi ท่องเที่ยวทั่วไทย">
     </div>
 
-    <!-- ส่วนท้ายเว็บ (Footer พร้อมโลโก้) -->
+    <!-- ส่วนท้ายเว็บ -->
     <footer>
         <div class="footer-logo">
-            <img src="logo.png" alt="Premium Ride Service Footer Logo">
+            <img src="logo.png" alt="Calling Taxi Logo Footer">
         </div>
         <p>&copy; 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.</p>
     </footer>
@@ -573,7 +586,7 @@
                 hotline: "📞 โทรสายด่วน: 085-2242135",
                 navBooking: "จองรถออนไลน์",
                 navFleet: "ประเภทรถที่ให้บริการ",
-                heroTitle: "Calling Taxi",
+                heroTitle: "Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย",
                 heroDesc: "บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง",
                 formTitle: "🚕 จองรถแท็กซี่ออนไลน์",
                 lblPickup: "จุดรับผู้โดยสาร",
@@ -609,7 +622,7 @@
                 hotline: "📞 Hotline: 085-2242135",
                 navBooking: "Book Online",
                 navFleet: "Our Fleet",
-                heroTitle: "Calling Taxi",
+                heroTitle: "Calling Taxi | Thailand Private Taxi & Car Rental Service",
                 heroDesc: "24/7 Private Taxi & Transfer Service, Custom Tours & Car Rental Across Thailand",
                 formTitle: "🚕 Online Taxi Booking",
                 lblPickup: "Pickup Location",
