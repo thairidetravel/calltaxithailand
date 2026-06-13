@@ -78,27 +78,49 @@
             </div>
         </section>
 
+        <!-- Highlights Section: ส่วนที่หายไป -->
+        <section class="grid grid-cols-1 gap-4">
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div id="h1Title" class="text-xl font-bold text-[#fbc02d] mb-2">⏱️ บริการ 24 ชั่วโมง</div>
+                <p id="h1Desc">สแตนบายด์รอรับคุณทุกที่ ทุกเวลา ไม่ว่าจะไปสนามบินหรือเดินทางเร่งด่วน</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div id="h2Title" class="text-xl font-bold text-[#fbc02d] mb-2">🗺️ เหมารถนำเที่ยว</div>
+                <p id="h2Desc">จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div id="h3Title" class="text-xl font-bold text-[#fbc02d] mb-2">🛡️ เดินทางปลอดภัย</div>
+                <p id="h3Desc">คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง</p>
+            </div>
+        </section>
+
         <!-- Banner Footer -->
         <img src="banner728_90.jpg" class="w-full rounded-lg shadow-sm">
     </main>
 
     <footer class="bg-[#222222] text-white py-6 text-center text-sm">
-        &copy; 2026 Calling Taxi Service. All rights reserved.
+        &copy; 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.
     </footer>
 
     <script>
         const content = {
-            TH: { hero: "Calling Taxi บริการรถรับส่งเหมารถทั่วไทย", book: "⚡ จองรถด่วน 24 ชั่วโมง ⚡", f1: "แท็กซี่ทั่วไป (Sedan)", f2: "รถยนต์อเนกประสงค์ (SUV)", f3: "รถตู้ VIP (Van)" },
-            EN: { hero: "Calling Taxi | Private Thailand Taxi Service", book: "⚡ 24/7 Express Booking ⚡", f1: "Standard Taxi (Sedan)", f2: "SUV Service", f3: "VIP Van Service" },
-            CN: { hero: "Calling Taxi 泰国包车接送服务", book: "⚡ 24小时 快速预订 ⚡", f1: "普通出租车 (Sedan)", f2: "SUV 舒适型", f3: "VIP 商务车 (Van)" }
+            TH: { hero: "Calling Taxi บริการรถรับส่งเหมารถทั่วไทย", book: "⚡ จองรถด่วน 24 ชั่วโมง ⚡", fleet1: "แท็กซี่ทั่วไป (Sedan)", fleet2: "รถยนต์อเนกประสงค์ (SUV)", fleet3: "รถตู้ VIP (Van)", h1T: "⏱️ บริการ 24 ชั่วโมง", h1D: "สแตนบายด์รอรับคุณทุกที่ ทุกเวลา ไม่ว่าจะไปสนามบินหรือเดินทางเร่งด่วน", h2T: "🗺️ เหมารถนำเที่ยว", h2D: "จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ", h3T: "🛡️ เดินทางปลอดภัย", h3D: "คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง" },
+            EN: { hero: "Calling Taxi | Private Thailand Taxi Service", book: "⚡ 24/7 Express Booking ⚡", fleet1: "Standard Taxi (Sedan)", fleet2: "SUV Service", fleet3: "VIP Van Service", h1T: "⏱️ 24/7 Service", h1D: "Always available anytime, anywhere for your airport transfers or urgent trips.", h2T: "🗺️ Private Tours", h2D: "Customized private trips, multi-day tours, round-trips or one-way services.", h3T: "🛡️ Safe Travel", h3D: "Professional, polite drivers with extensive route knowledge for your safety." },
+            CN: { hero: "Calling Taxi 泰国包车接送服务", book: "⚡ 24小时 快速预订 ⚡", fleet1: "普通出租车 (Sedan)", fleet2: "SUV 舒适型", fleet3: "VIP 商务车 (Van)", h1T: "⏱️ 24小时服务", h1D: "随时待命，无论机场接送还是紧急行程，随时为您服务。", h2T: "🗺️ 包车旅游", h2D: "私人定制行程，周边游、长途包车或往返接送，为您提供优质服务。", h3T: "🛡️ 安全出行", h3D: "专业司机，礼貌周到，熟悉路线，全程保障您的安全。" }
         };
 
         function changeLanguage(lang) {
             document.getElementById('heroTitle').innerText = content[lang].hero;
             document.getElementById('bookingTitle').innerText = content[lang].book;
-            document.getElementById('fleet1').innerText = content[lang].f1;
-            document.getElementById('fleet2').innerText = content[lang].f2;
-            document.getElementById('fleet3').innerText = content[lang].f3;
+            document.getElementById('fleet1').innerText = content[lang].fleet1;
+            document.getElementById('fleet2').innerText = content[lang].fleet2;
+            document.getElementById('fleet3').innerText = content[lang].fleet3;
+            document.getElementById('h1Title').innerText = content[lang].h1T;
+            document.getElementById('h1Desc').innerText = content[lang].h1D;
+            document.getElementById('h2Title').innerText = content[lang].h2T;
+            document.getElementById('h2Desc').innerText = content[lang].h2D;
+            document.getElementById('h3Title').innerText = content[lang].h3T;
+            document.getElementById('h3Desc').innerText = content[lang].h3D;
         }
     </script>
 </body>
