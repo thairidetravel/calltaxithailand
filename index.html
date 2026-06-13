@@ -4,280 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calling Taxi | บริการรถรับส่งสนามบินและนำเที่ยวทั่วไทย 24 ชม.</title>
-    <meta name="description" content="บริการรถแท็กซี่ รถเหมา รถตู้ นำเที่ยวทั่วไทยและรับส่งสนามบิน 24 ชั่วโมง จองง่าย บริการสุภาพ ปลอดภัย ราคามาตรฐาน">
-    <meta name="keywords" content="เรียกแท็กซี่, รถเหมา, รถตู้, รับส่งสนามบิน, สุวรรณภูมิ, ดอนเมือง, เเที่ยงทั่วไทย, แท็กซี่ 24 ชม">
     
     <!-- Tailwind CSS Via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts (Prompt & Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Prompt', 'Inter', sans-serif;
-            background-color: #f4f6f9;
-            color: #333333;
-        }
+        body { font-family: 'Prompt', sans-serif; background-color: #f4f6f9; color: #333333; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-    <!-- Header & Language Switcher -->
+    <!-- Header -->
     <header class="bg-[#fbc02d] px-[5%] py-2.5 flex justify-between items-center shadow-md sticky top-0 z-50">
-        <a href="#" class="flex items-center gap-3 text-none">
-            <img src="logo.png" alt="Calling Taxi Logo" class="h-[50px] w-auto rounded-full shadow-sm">
-            <div class="text-2xl font-bold text-black flex items-center">
-                Calling <span class="bg-black text-white px-2 py-0.5 rounded ml-1 text-xl">TAXI</span>
-            </div>
+        <a href="#" class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="h-[50px] w-auto rounded-full">
+            <div class="text-2xl font-bold text-black">Calling <span class="bg-black text-white px-2 rounded">TAXI</span></div>
         </a>
-        <button id="langBtn" onclick="toggleLanguage()" class="bg-black text-white border-2 border-black hover:bg-white hover:text-black px-4 py-1.5 rounded-lg text-sm font-bold transition">
-            <span id="langText">EN</span>
-        </button>
     </header>
 
     <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-6 space-y-6">
         
-        <!-- Hero Section Banner -->
-        <section class="w-full rounded-xl overflow-hidden shadow-sm bg-white border border-gray-200">
-            <img src="menu_01.png" alt="Calling Taxi Premium Service Banner" class="w-full h-auto object-cover max-h-[400px]">
-            <div class="p-6 text-center space-y-2 border-t border-gray-100 bg-white">
-                <h1 id="heroTitle" class="text-xl md:text-3xl font-bold text-gray-900">Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย</h1>
-                <p id="heroSubtitle" class="text-gray-600 text-sm md:text-base">บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
-            </div>
-        </section>
+        <!-- Booking Channels Section -->
+        <section class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm text-center space-y-8">
+            <h2 class="text-3xl font-bold text-gray-900">⚡ จองรถด่วน 24 ชั่วโมง ⚡</h2>
 
-        <!-- 📲 Booking Channels Section (LINE, WhatsApp, WeChat) -->
-        <section class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm text-center space-y-6">
-            <div class="space-y-2">
-                <h2 id="bookingMainTitle" class="text-2xl md:text-3xl font-bold text-gray-900 flex items-center justify-center gap-2">
-                    ⚡ <span class="text-black">จองรถตอนนี้ บริการด่วน 24 ชั่วโมง</span> ⚡
-                </h2>
-                <p id="bookingSubTitle" class="text-gray-600 text-base md:text-lg font-medium">✨ สะดวก รวดเร็ว มีรถบริการแน่นอน คนขับสุภาพ ปลอดภัย ราคามาตรฐาน</p>
-            </div>
-
-            <!-- QR Code & Buttons Grid Dashboard -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- LINE Channel -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 shadow-sm flex flex-col justify-between space-y-4">
-                    <div class="space-y-1">
-                        <span class="bg-[#06c755] text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">LINE Chat</span>
-                        <p class="text-sm font-semibold text-gray-700 pt-1">สำหรับลูกค้าชาวไทย</p>
+                <!-- LINE -->
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 shadow-sm space-y-3">
+                    <span class="bg-[#06c755] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">LINE Chat</span>
+                    <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100">
+                        <img src="line_qr.png" alt="LINE" class="w-full h-auto rounded-lg">
                     </div>
-                    <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100 shadow-inner">
-                        <img src="line_qr.png" alt="LINE QR Code" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
-                    </div>
-                    <!-- ข้อความใต้ QR Code ตามสั่ง -->
-                    <p class="qr-label text-base font-bold text-red-600 my-1">จองรถด่วน</p>
-                    <a href="https://lin.ee/xwb1lQj" target="_blank" class="w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-2.5 px-4 rounded-xl transition duration-300 shadow-sm text-sm flex items-center justify-center gap-2 decoration-none">
-                        <i class="fa-brands fa-line text-lg"></i>
-                        <span class="btnLineText">แอดไลน์จองรถ</span>
-                    </a>
+                    <!-- ข้อความใหญ่ตามบรีฟ -->
+                    <div class="text-xl font-black text-red-600">จองรถด่วน</div>
+                    <div class="text-sm font-bold text-gray-500">LINE 预订</div>
+                    <a href="https://lin.ee/xwb1lQj" target="_blank" class="block w-full bg-[#06c755] text-white font-bold py-2.5 rounded-xl">แอดไลน์จองรถ</a>
                 </div>
 
-                <!-- WhatsApp Channel -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 shadow-sm flex flex-col justify-between space-y-4">
-                    <div class="space-y-1">
-                        <span class="bg-[#25d366] text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">WhatsApp</span>
-                        <p class="text-sm font-semibold text-gray-700 pt-1">International Call</p>
+                <!-- WhatsApp -->
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 shadow-sm space-y-3">
+                    <span class="bg-[#25d366] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">WhatsApp</span>
+                    <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100">
+                        <img src="whatsapp.jpg" alt="WhatsApp" class="w-full h-auto rounded-lg">
                     </div>
-                    <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100 shadow-inner">
-                        <img src="whatsapp.jpg" alt="WhatsApp QR Code" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
-                    </div>
-                    <!-- ข้อความใต้ QR Code ตามสั่ง -->
-                    <p class="qr-label text-base font-bold text-red-600 my-1">จองรถด่วน</p>
-                    <a href="https://wa.me/#" target="_blank" class="w-full bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-2.5 px-4 rounded-xl transition duration-300 shadow-sm text-sm flex items-center justify-center gap-2 decoration-none">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>WhatsApp Chat</span>
-                    </a>
+                    <!-- ข้อความใหญ่ตามบรีฟ -->
+                    <div class="text-xl font-black text-red-600">จองรถด่วน</div>
+                    <div class="text-sm font-bold text-gray-500">立即车订</div>
+                    <a href="https://wa.me/#" target="_blank" class="block w-full bg-[#25d366] text-white font-bold py-2.5 rounded-xl">WhatsApp Chat</a>
                 </div>
 
-                <!-- WeChat Channel -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 shadow-sm flex flex-col justify-between space-y-4">
-                    <div class="space-y-1">
-                        <span class="bg-[#00c300] text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">WeChat</span>
-                        <p class="text-sm font-semibold text-gray-700 pt-1">中文服务 (Chinese)</p>
+                <!-- WeChat -->
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4 shadow-sm space-y-3">
+                    <span class="bg-[#00c300] text-white text-xs font-bold px-3 py-1 rounded-full uppercase">WeChat</span>
+                    <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100">
+                        <img src="wechat.jpg" alt="WeChat" class="w-full h-auto rounded-lg">
                     </div>
-                    <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100 shadow-inner">
-                        <img src="wechat.jpg" alt="WeChat QR Code" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
-                    </div>
-                    <!-- ข้อความใต้ QR Code ตามสั่ง -->
-                    <p class="qr-label text-base font-bold text-red-600 my-1">จองรถด่วน</p>
-                    <a href="#" target="_blank" class="w-full bg-[#00c300] hover:bg-[#00b000] text-white font-bold py-2.5 px-4 rounded-xl transition duration-300 shadow-sm text-sm flex items-center justify-center gap-2 decoration-none">
-                        <i class="fa-brands fa-weixin text-lg"></i>
-                        <span>WeChat Booking</span>
-                    </a>
+                    <!-- ข้อความใหญ่ตามบรีฟ -->
+                    <div class="text-xl font-black text-red-600">จองรถด่วน</div>
+                    <div class="text-sm font-bold text-gray-500">微信预订</div>
+                    <a href="#" target="_blank" class="block w-full bg-[#00c300] text-white font-bold py-2.5 rounded-xl">WeChat Booking</a>
                 </div>
 
-            </div>
-
-            <!-- Common Instruction Badge -->
-            <div class="inline-flex items-center gap-2 bg-[#fbc02d]/20 text-black px-5 py-2 rounded-full text-sm font-bold mt-2">
-                <i class="fa-solid fa-circle-check text-[#fbc02d]"></i>
-                <span id="badgeText">สแกน QR Code หรือกดปุ่ม เพื่อส่งข้อมูลการเดินทาง (ต้นทาง - ปลายทาง) ได้ทันทีครับ</span>
             </div>
         </section>
 
-        <!-- Fleet Showcase -->
-        <section class="space-y-4">
-            <h2 id="servicesHeading" class="text-xl font-bold text-center text-gray-800">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                    <div class="h-48 bg-gray-100 overflow-hidden"><img src="altis.png" alt="Sedan" class="w-full h-full object-cover"></div>
-                    <div class="p-4 text-center space-y-1">
-                        <h3 id="fleetSedanTitle" class="font-bold text-gray-900 text-base">แท็กซี่ทั่วไป (Sedan)</h3>
-                        <p id="fleetSedanDesc" class="text-gray-600 text-sm">รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน</p>
-                    </div>
-                </div>
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                    <div class="h-48 bg-gray-100 overflow-hidden"><img src="suv.png" alt="SUV" class="w-full h-full object-cover"></div>
-                    <div class="p-4 text-center space-y-1">
-                        <h3 id="fleetSuvTitle" class="font-bold text-gray-900 text-base">รถยนต์อเนกประสงค์ (SUV)</h3>
-                        <p id="fleetSuvDesc" class="text-gray-600 text-sm">รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป</p>
-                    </div>
-                </div>
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                    <div class="h-48 bg-gray-100 overflow-hidden"><img src="van_03.png" alt="VIP Van" class="w-full h-full object-cover"></div>
-                    <div class="p-4 text-center space-y-1">
-                        <h3 id="fleetVanTitle" class="font-bold text-gray-900 text-base">รถตู้ VIP (Van)</h3>
-                        <p id="fleetVanDesc" class="text-gray-600 text-sm">รถตู้แต่ง VIP เต็มรูปแบบ สิ่งอำนวยความสะดวกครบครัน เหมาะสำหรับการเดินทางเป็นกลุ่มคณะ สัมมนา หรือท่องเที่ยวทางไกล</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3 Feature Highlights -->
-        <section class="grid grid-cols-1 gap-4">
-            <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm text-center space-y-2">
-                <h3 id="f1Title" class="text-xl font-bold text-[#fbc02d]">⏱️ บริการ 24 ชั่วโมง</h3>
-                <p id="f1Desc" class="text-gray-700 text-base">สแตนบายด์รอรับคุณทุกที่ ทุกเวลา ไม่ว่าจะไปสนามบินหรือเดินทางเร่งด่วน</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm text-center space-y-2">
-                <h3 id="f2Title" class="text-xl font-bold text-[#fbc02d]">🗺️ เหมารถนำเที่ยว</h3>
-                <p id="f2Desc" class="text-gray-700 text-base">จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm text-center space-y-2">
-                <h3 id="f3Title" class="text-xl font-bold text-[#fbc02d]">🛡️ เดินทางปลอดภัย</h3>
-                <p id="f3Desc" class="text-gray-700 text-base">คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง</p>
-            </div>
-        </section>
-
-        <!-- Bottom Image Banner -->
-        <section class="w-full max-w-4xl mx-auto text-center">
-            <img src="banner728_90.jpg" alt="แบนเนอร์บริการ Calling Taxi ท่องเที่ยวทั่วไทย" class="w-full h-auto rounded-lg shadow-sm mx-auto">
-        </section>
     </main>
 
-    <footer class="bg-[#222222] text-white py-8 text-center space-y-4">
-        <div class="flex justify-center"><img src="logo.png" alt="Footer Logo" class="h-20 w-20 rounded-full"></div>
-        <p id="footerText" class="text-sm px-4 leading-relaxed">&copy; 2026 Calling Taxi Service. All rights reserved.</p>
+    <footer class="bg-[#222222] text-white py-8 text-center">
+        <p>&copy; 2026 Calling Taxi Service. All rights reserved.</p>
     </footer>
 
-    <!-- Language System JS -->
-    <script>
-        const langData = {
-            TH: {
-                langText: "EN",
-                heroTitle: "Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย",
-                heroSubtitle: "บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง",
-                bookingMainTitle: "⚡ จองรถตอนนี้ บริการด่วน 24 ชั่วโมง ⚡",
-                bookingSubTitle: "✨ สะดวก รวดเร็ว มีรถบริการแน่นอน คนขับสุภาพ ปลอดภัย ราคามาตรฐาน",
-                badgeText: "สแกน QR Code หรือกดปุ่ม เพื่อส่งข้อมูลการเดินทาง (ต้นทาง - ปลายทาง) ได้ทันทีครับ",
-                servicesHeading: "🚖 รถยนต์ที่เราเปิดให้บริการ",
-                fleetSedanTitle: "แท็กซี่ทั่วไป (Sedan)",
-                fleetSedanDesc: "รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน",
-                fleetSuvTitle: "รถยนต์อเนกประสงค์ (SUV)",
-                fleetSuvDesc: "รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป",
-                fleetVanTitle: "รถตู้ VIP (Van)",
-                fleetVanDesc: "รถตู้แต่ง VIP เต็มรูปแบบ สิ่งอำนวยความสะดวกครบครัน เหมาะสำหรับการเดินทางเป็นกลุ่มคณะ สัมมนา หรือท่องเที่ยวทางไกล",
-                f1Title: "⏱️ บริการ 24 ชั่วโมง",
-                f1Desc: "สแตนบายด์รอรับคุณทุกที่ ทุกเวลา ไม่ว่าจะไปสนามบินหรือเดินทางเร่งด่วน",
-                f2Title: "🗺️ เหมารถนำเที่ยว",
-                f2Desc: "จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ",
-                f3Title: "🛡️ เดินทางปลอดภัย",
-                f3Desc: "คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง",
-                footerText: "© 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.",
-                qrLabel: "จองรถด่วน"
-            },
-            EN: {
-                langText: "TH",
-                heroTitle: "Calling Taxi | Thailand Private Taxi & Car Rental Service",
-                heroSubtitle: "24/7 Private Taxi & Transfer Service, Custom Tours Across Thailand",
-                bookingMainTitle: "⚡ Book Your Ride Now | 24/7 Service ⚡",
-                bookingSubTitle: "✨ Fast, reliable, and secure booking. Professional drivers & fixed transparent pricing.",
-                badgeText: "Scan QR Code or click buttons to send trip details (Pickup - Dropoff) instantly.",
-                servicesHeading: "🚖 Our Service Vehicles Fleet",
-                fleetSedanTitle: "Standard Taxi (Sedan)",
-                fleetSedanDesc: "Toyota Corolla Altis or equivalent. Perfect for 1-4 passengers with standard luggage.",
-                fleetSuvTitle: "Sport Utility Vehicle (SUV)",
-                fleetSuvDesc: "Comfortable SUV accommodating up to 4 passengers with luggage and private driver included.",
-                fleetVanTitle: "VIP Van",
-                fleetVanDesc: "Full option luxury VIP Van. Perfect for group travel, business seminars, or long distance trips.",
-                f1Title: "⏱️ 24/7 Support",
-                f1Desc: "Always available for you anytime, anywhere. Ready for airport transfers and urgent trips.",
-                f2Title: "🗺️ Private City Tours",
-                f2Desc: "Customized private trips, multi-day tours, round-trips or one-way service with local drivers.",
-                f3Title: "🛡️ Safe & Reliable",
-                f3Desc: "Professional, polite drivers with extensive route knowledge to guarantee your safe arrival.",
-                footerText: "© 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.",
-                qrLabel: "Book Now"
-            }
-        };
-
-        let currentLang = 'TH';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'TH' ? 'EN' : 'TH';
-            applyLanguage(currentLang);
-        }
-
-        function applyLanguage(lang) {
-            const data = langData[lang];
-            document.getElementById('langText').innerText = data.langText;
-            document.getElementById('heroTitle').innerText = data.heroTitle;
-            document.getElementById('heroSubtitle').innerText = data.heroSubtitle;
-            document.getElementById('bookingMainTitle').innerHTML = lang === 'TH' ? `⚡ <span class="text-black">จองรถตอนนี้ บริการด่วน 24 ชั่วโมง</span> ⚡` : `⚡ <span class="text-black">Book Your Ride Now | 24/7 Service</span> ⚡`;
-            document.getElementById('bookingSubTitle').innerText = data.bookingSubTitle;
-            document.getElementById('badgeText').innerText = data.badgeText;
-            document.getElementById('servicesHeading').innerText = data.servicesHeading;
-            document.getElementById('fleetSedanTitle').innerText = data.fleetSedanTitle;
-            document.getElementById('fleetSedanDesc').innerText = data.fleetSedanDesc;
-            document.getElementById('fleetSuvTitle').innerText = data.fleetSuvTitle;
-            document.getElementById('fleetSuvDesc').innerText = data.fleetSuvDesc;
-            document.getElementById('fleetVanTitle').innerText = data.fleetVanTitle;
-            document.getElementById('fleetVanDesc').innerText = data.fleetVanDesc;
-            document.getElementById('f1Title').innerText = data.f1Title;
-            document.getElementById('f1Desc').innerText = data.f1Desc;
-            document.getElementById('f2Title').innerText = data.f2Title;
-            document.getElementById('f2Desc').innerText = data.f2Desc;
-            document.getElementById('f3Title').innerText = data.f3Title;
-            document.getElementById('f3Desc').innerText = data.f3Desc;
-            document.getElementById('footerText').innerText = data.footerText;
-            
-            // Translate the static text below QR Codes
-            const qrLabels = document.querySelectorAll('.qr-label');
-            qrLabels.forEach(el => {
-                el.innerText = data.qrLabel;
-            });
-
-            // Translate the dynamic labels inside the QR cards
-            const lineTexts = document.querySelectorAll('.btnLineText');
-            lineTexts.forEach(el => {
-                el.innerText = lang === 'TH' ? 'แอดไลน์จองรถ' : 'Book via LINE';
-            });
-
-            document.documentElement.lang = lang.toLowerCase();
-        }
-
-        window.onload = function() {
-            applyLanguage(currentLang);
-        };
-    </script>
 </body>
 </html>
