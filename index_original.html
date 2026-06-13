@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://idetravel.github.io/">
 
-    <!-- Open Graph สำหรับแชร์ลง LINE / Facebook / WhatsApp แล้วขึ้นรูปสวยๆ -->
+    <!-- Open Graph สำหรับแชร์ลง LINE / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://idetravel.github.io/">
     <meta property="og:title" content="Calling Taxi | บริการเหมารถแท็กซี่ รถตู้ไปต่างจังหวัด 24 ชม.">
@@ -47,7 +47,6 @@
             z-index: 100;
         }
 
-        /* โลโก้แบรนด์รวมในกรอบสีเหลือง */
         .header-logo-wrapper {
             display: flex;
             align-items: center;
@@ -81,7 +80,6 @@
             align-items: center;
         }
 
-        /* ปุ่มสลับภาษา TH / EN */
         .lang-btn {
             background-color: #000;
             color: #fff;
@@ -121,46 +119,94 @@
             color: #fbc02d;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
-            height: 40vh;
+        /* ===================================================
+           [ปรับปรุงใหม่] ส่วนแสดงแบนเนอร์เดี่ยวสำหรับ menu_01.png
+           ปรับแต่งขนาดให้พอดีสัดส่วนทั้งคอมพิวเตอร์และมือถืออัตโนมัติ
+           =================================================== */
+        .premium-hero-banner {
+            width: 100%;
+            background-color: #111;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            border-bottom: 5px solid #fbc02d;
+        }
+
+        .banner-single-wrapper {
+            width: 100%;
+            max-width: 1200px; /* จำกัดความกว้างสูงสุดเพื่อให้ภาพไม่ขยายใหญ่เกินไปบนจอคอมกว้างๆ */
+            position: relative;
+        }
+
+        .banner-single-wrapper img {
+            width: 100%;
+            height: auto; /* รักษาอัตราส่วนของรูปภาพดั้งเดิมไว้ ไม่ให้ภาพบิดเบี้ยว */
+            display: block;
+        }
+
+        /* ใส่เอฟเฟกต์แสงเงาจางๆ ล้อมรอบรูปภาพเพื่อความพรีเมียม */
+        .banner-single-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 100%);
+            pointer-events: none;
+        }
+
+        /* โซนข้อความต้อนรับด้านล่างภาพแบนเนอร์ */
+        .intro-section {
+            max-width: 1100px;
+            margin: 25px auto 0 auto;
+            padding: 0 20px;
             text-align: center;
-            color: white;
-            padding: 20px;
         }
 
-        .hero h1 {
-            font-size: 42px;
+        .intro-box {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid #fbc02d;
+        }
+
+        .intro-box h1 {
+            font-size: 30px;
+            color: #111;
             margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.4;
         }
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .intro-box p {
+            font-size: 17px;
+            color: #555;
             font-weight: 300;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .intro-box h1 { font-size: 22px; }
+            .intro-box p { font-size: 14px; }
         }
 
         /* Main Content Container */
         .main-container {
             max-width: 1100px;
-            margin: -40px auto 30px auto;
+            margin: 20px auto 30px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 30px;
-            position: relative;
-            z-index: 10;
         }
 
         @media (max-width: 768px) {
             .main-container {
                 grid-template-columns: 1fr;
-                margin-top: 20px;
+                margin-top: 15px;
             }
         }
 
@@ -180,9 +226,15 @@
             padding-bottom: 10px;
         }
 
-        /* Form Group */
+        /* Form Group & Layout */
         .form-group {
             margin-bottom: 15px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .form-group label {
@@ -190,19 +242,28 @@
             margin-bottom: 5px;
             font-size: 14px;
             color: #666;
+            font-weight: 600;
         }
 
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 16px;
             outline: none;
+            background-color: #fff;
         }
 
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: #fbc02d;
+            box-shadow: 0 0 5px rgba(251, 192, 45, 0.4);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 80px;
+            font-family: inherit;
         }
 
         .btn-submit {
@@ -216,6 +277,7 @@
             border-radius: 6px;
             cursor: pointer;
             transition: 0.3s;
+            margin-top: 10px;
         }
 
         .btn-submit:hover {
@@ -441,19 +503,45 @@
         <a href="#fleet" id="nav-fleet">ประเภทรถที่ให้บริการ</a>
     </nav>
 
-    <!-- ส่วนหัวโปรโมทหน้าเว็บ -->
-    <section class="hero">
-        <h1 id="hero-title">Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย</h1>
-        <p id="hero-desc">บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
+    <!-- [แก้ไขส่วนนี้เรียบร้อย] แสดงรูปแบนเนอร์เดี่ยว menu_01.png ขนาดพอดีสัดส่วนเป๊ะๆ ไม่ทับซ้อน -->
+    <section class="premium-hero-banner" aria-label="Calling Taxi Banner">
+        <div class="banner-single-wrapper">
+            <img src="menu_01.png" alt="Explore Thailand with Private Car Service - Airport Transfer & Private Tour">
+        </div>
+    </section>
+
+    <!-- ส่วนเนื้อหาข้อความหัวเว็บหลัก แสดงผลด้านล่างแบนเนอร์สวยงามเด่นชัด -->
+    <section class="intro-section">
+        <div class="intro-box">
+            <h1 id="hero-title">Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย</h1>
+            <p id="hero-desc">บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
+        </div>
     </section>
 
     <!-- คอนเทนต์หลัก -->
     <main class="main-container" id="booking">
         
-        <!-- แบบฟอร์มจองรถ -->
+        <!-- แบบฟอร์มจองรถออนไลน์ -->
         <section class="card" aria-labelledby="form-title">
             <h2 id="form-title">🚕 จองรถแท็กซี่ออนไลน์</h2>
             <form id="taxiForm" onsubmit="bookTaxi(event)">
+                
+                <div class="form-group">
+                    <label for="cust-name" id="lbl-name">ชื่อลูกค้า / Name</label>
+                    <input type="text" id="cust-name" placeholder="กรอกชื่อ-นามสกุลของคุณ" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pickup-date" id="lbl-date">วันที่ใช้รถ / Service Date</label>
+                        <input type="date" id="pickup-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" id="lbl-phone">เบอร์โทรศัพท์ติดต่อของคุณ</label>
+                        <input type="tel" id="phone" placeholder="กรอกเบอร์โทรศัพท์" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="pickup" id="lbl-pickup">จุดรับผู้โดยสาร</label>
                     <input type="text" id="pickup" placeholder="ระบุสถานที่รับ หรือชื่อโรงแรม/สนามบิน" required>
@@ -462,24 +550,42 @@
                     <label for="dropoff" id="lbl-dropoff">จุดหมายปลายทาง</label>
                     <input type="text" id="dropoff" placeholder="ระบุสถานที่ปลายทาง หรือจังหวัด" required>
                 </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passengers" id="lbl-passengers">จำนวนคน / Passengers</label>
+                        <input type="number" id="passengers" min="1" placeholder="เช่น 2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="luggage" id="lbl-luggage">จำนวนกระเป๋า / Luggage</label>
+                        <input type="number" id="luggage" min="0" placeholder="เช่น 3" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="car-type" id="lbl-cartype">ประเภทรถที่ต้องการ</label>
                     <select id="car-type">
                         <option value="standard" id="opt-sedan">รถเก๋งทั่วไป Altis (4 ที่นั่ง)</option>
-                        <!-- แก้ไข Dropdown: อัปเดตข้อมูลรถ SUV 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ -->
                         <option value="suv" id="opt-suv">รถ SUV (4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ)</option>
                         <option value="van" id="opt-van">รถตู้ VIP / Van</option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="phone" id="lbl-phone">เบอร์โทรศัพท์ติดต่อของคุณ</label>
-                    <input type="tel" id="phone" placeholder="กรอกเบอร์โทรศัพท์ของคุณ" required>
+                    <label for="flight-num" id="lbl-flight">หมายเลขไฟล์บิน (กรณีรับจากสนามบิน) / Flight Number</label>
+                    <input type="text" id="flight-num" placeholder="เช่น TG123, FD456 (ถ้ามี)">
                 </div>
+
+                <div class="form-group">
+                    <label for="notes" id="lbl-notes">หมายเหตุ / Special Requests</label>
+                    <textarea id="notes" placeholder="ระบุรายละเอียดเพิ่มเติม (เช่น ต้องการแวะจุดไหน, มีเด็กหรือผู้สูงอายุมาด้วย เป็นต้น)"></textarea>
+                </div>
+
                 <button type="submit" class="btn-submit" id="btn-submit">ส่งข้อมูลเพื่อเรียกรถ</button>
             </form>
         </section>
 
-        <!-- ช่องทางการติดต่อ -->
+        <!-- ช่องทางการติดต่อด่วน -->
         <section class="card" aria-labelledby="contact-title">
             <h2 id="contact-title">💬 ช่องทางติดต่อตรง</h2>
             
@@ -495,13 +601,11 @@
             <div class="qr-section-title" id="qr-title">✨ หรือสแกนผ่านแอปพลิเคชัน (You have a trip I have a Car)</div>
             
             <div class="qr-grid">
-                <!-- WeChat QR Code -->
                 <div class="qr-box">
                     <img src="wechat.jpg" alt="WeChat QR Code สำหรับติดต่อรถเหมา Calling Taxi">
                     <p style="color: #07C160;">WeChat</p>
                     <span>Tel: 0852242135</span>
                 </div>
-                <!-- WhatsApp QR Code -->
                 <div class="qr-box">
                     <img src="whatsapp.jpg" alt="WhatsApp QR Code สำหรับจองรถ Calling Taxi">
                     <p style="color: #25D366;">WhatsApp</p>
@@ -511,12 +615,11 @@
         </section>
     </main>
 
-    <!-- โซนแสดงรูปรถยนต์ -->
+    <!-- โซนแสดงรูปรถยนต์ในฟลีท -->
     <section class="fleet-container" id="fleet">
         <h2 class="fleet-title" id="fleet-title">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
         <div class="fleet-grid">
             
-            <!-- คันที่ 1: Sedan Altis -->
             <article class="car-card">
                 <div class="car-img-wrapper">
                     <img src="altis.png" alt="บริการรถแท็กซี่ทั่วไป Sedan Toyota Altis 4 ที่นั่ง">
@@ -527,7 +630,6 @@
                 </div>
             </article>
 
-            <!-- คันที่ 2: SUV (แก้ไขเนื้อหารายละเอียดรถตามความต้องการของผู้ใช้) -->
             <article class="car-card">
                 <div class="car-img-wrapper">
                     <img src="suv.png" alt="บริการรถเหมา SUV 4 ที่นั่ง พร้อมสัมภาระและคนขับ">
@@ -538,7 +640,6 @@
                 </div>
             </article>
 
-            <!-- คันที่ 3: Van -->
             <article class="car-card">
                 <div class="car-img-wrapper">
                     <img src="van_03.png" alt="บริการเช่ารถตู้ VIP Van พร้อมคนขับนำเที่ยว">
@@ -568,7 +669,7 @@
         </div>
     </section>
 
-    <!-- ส่วนแสดงแบนเนอร์ -->
+    <!-- ส่วนแสดงแบนเนอร์ท้ายเว็บ -->
     <div class="banner-container">
         <img src="banner728_90.jpg" alt="แบนเนอร์บริการ Calling Taxi ท่องเที่ยวทั่วไทย">
     </div>
@@ -590,17 +691,30 @@
                 heroTitle: "Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย",
                 heroDesc: "บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง",
                 formTitle: "🚕 จองรถแท็กซี่ออนไลน์",
+                
+                lblName: "ชื่อลูกค้า",
+                phName: "กรอกชื่อ-นามสกุลของคุณ",
+                lblDate: "วันที่ใช้รถ",
+                lblPhone: "เบอร์โทรศัพท์ติดต่อของคุณ",
+                phPhone: "กรอกเบอร์โทรศัพท์",
                 lblPickup: "จุดรับผู้โดยสาร",
                 phPickup: "ระบุสถานที่รับ หรือชื่อโรงแรม/สนามบิน",
                 lblDropoff: "จุดหมายปลายทาง",
                 phDropoff: "ระบุสถานที่ปลายทาง หรือจังหวัด",
+                lblPassengers: "จำนวนคน",
+                phPassengers: "เช่น 2",
+                lblLuggage: "จำนวนกระเป๋า",
+                phLuggage: "เช่น 3",
                 lblCarType: "ประเภทรถที่ต้องการ",
                 optSedan: "รถเก๋งทั่วไป Altis (4 ที่นั่ง)",
-                optSuv: "รถ SUV (4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ)", // แก้ไขสคริปต์ TH
+                optSuv: "รถ SUV (4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ)",
                 optVan: "รถตู้ VIP / Van",
-                lblPhone: "เบอร์โทรศัพท์ติดต่อของคุณ",
-                phPhone: "กรอกเบอร์โทรศัพท์ของคุณ",
+                lblFlight: "หมายเลขไฟล์บิน (กรณีรับจากสนามบิน)",
+                phFlight: "เช่น TG123, FD456 (ถ้ามี)",
+                lblNotes: "หมายเหตุ",
+                phNotes: "ระบุรายละเอียดเพิ่มเติม (เช่น ต้องการแวะจุดไหน, มีเด็กหรือผู้สูงอายุมาด้วย เป็นต้น)",
                 btnSubmit: "ส่งข้อมูลเพื่อเรียกรถ",
+                
                 contactTitle: "💬 ช่องทางติดต่อตรง",
                 btnLine: "กดเพื่อเพิ่มเพื่อนใน LINE (คลิกเลย)",
                 qrTitle: "✨ หรือสแกนผ่านแอปพลิเคชัน (You have a trip I have a Car)",
@@ -608,7 +722,7 @@
                 car1Title: "แท็กซี่ทั่วไป (Sedan)",
                 car1Desc: "รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน",
                 car2Title: "รถยนต์อเนกประสงค์ (SUV)",
-                car2Desc: "รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป", // แก้ไขสคริปต์ TH
+                car2Desc: "รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป",
                 car3Title: "รถตู้ VIP (Van)",
                 car3Desc: "รถตู้แต่ง VIP เต็มรูปแบบ สิ่งอำนวยความสะดวกครบครัน เหมาะสำหรับการเดินทางเป็นกลุ่มคณะ สัมมนา หรือท่องเที่ยวทางไกล",
                 f1Title: "⏱️ บริการ 24 ชั่วโมง",
@@ -617,7 +731,8 @@
                 f2Desc: "จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ",
                 f3Title: "เดินทางปลอดภัย",
                 f3Desc: "คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง",
-                alertMsg: "🎉 รับข้อมูลเรียกรถ Calling Taxi เรียบร้อยแล้ว!\n\n📍 จุดรับ: {pickup}\n🏁 จุดส่ง: {dropoff}\n📞 เบอร์ติดต่อกลับของคุณ: {phone}\n\nระบบกำลังเปิด LINE เพื่อให้คุณส่งข้อมูลและคอนเฟิร์มคิวรถกับเราครับ..."
+                
+                alertMsg: "🎉 รับข้อมูลเรียกรถ Calling Taxi เรียบร้อยแล้ว!\n\n👤 ชื่อลูกค้า: {name}\n📅 วันที่ใช้รถ: {date}\n📞 เบอร์ติดต่อ: {phone}\n📍 จุดรับ: {pickup}\n🏁 จุดส่ง: {dropoff}\n👥 จำนวนผู้โดยสาร: {passengers} คน\n🧳 จำนวนกระเป๋า: {luggage} ใบ\n🚗 ประเภทรถ: {cartype}\n✈️ หมายเลขเที่ยวบิน: {flight}\n📝 หมายเหตุ: {notes}\n\nระบบกำลังเปิด LINE เพื่อให้คุณส่งข้อมูลและยืนยันคิวรถกับเราครับ..."
             },
             en: {
                 hotline: "📞 Hotline: 085-2242135",
@@ -626,17 +741,30 @@
                 heroTitle: "Calling Taxi | Thailand Private Taxi & Car Rental Service",
                 heroDesc: "24/7 Private Taxi & Transfer Service, Custom Tours & Car Rental Across Thailand",
                 formTitle: "🚕 Online Taxi Booking",
+                
+                lblName: "Customer Name",
+                phName: "Enter your full name",
+                lblDate: "Service Date",
+                lblPhone: "Phone Number",
+                phPhone: "Enter phone number",
                 lblPickup: "Pickup Location",
                 phPickup: "Enter pickup point, hotel, or airport name",
                 lblDropoff: "Drop-off Location",
                 phDropoff: "Enter destination, hotel, or province",
+                lblPassengers: "Passengers Count",
+                phPassengers: "e.g. 2",
+                lblLuggage: "Baggage Count",
+                phLuggage: "e.g. 3",
                 lblCarType: "Select Vehicle Type",
                 optSedan: "Standard Sedan Altis (4 Seats)",
-                optSuv: "SUV (4 Seats with Luggage & Driver Included)", // แก้ไขสคริปต์ EN
+                optSuv: "SUV (4 Seats with Luggage & Driver Included)",
                 optVan: "VIP Van / Minibus",
-                lblPhone: "Your Phone Number",
-                phPhone: "Enter your phone number",
+                lblFlight: "Flight Number (For Airport Pickup)",
+                phFlight: "e.g. TG123, FD456 (If any)",
+                lblNotes: "Special Requests / Notes",
+                phNotes: "Any additional details (e.g. side stops, child seats, etc.)",
                 btnSubmit: "Book a Ride Now",
+                
                 contactTitle: "💬 Direct Contact",
                 btnLine: "Click to Add LINE Friends",
                 qrTitle: "✨ Or Scan via Applications (You have a trip I have a Car)",
@@ -644,7 +772,7 @@
                 car1Title: "Standard Taxi (Sedan)",
                 car1Desc: "Toyota Corolla Altis or equivalent. Perfect for 1-4 passengers with standard luggage.",
                 car2Title: "Sport Utility Vehicle (SUV)",
-                car2Desc: "Comfortable SUV accommodating up to 4 passengers with luggage and private driver included.", // แก้ไขสคริปต์ EN
+                car2Desc: "Comfortable SUV accommodating up to 4 passengers with luggage and private driver included.",
                 car3Title: "VIP Van",
                 car3Desc: "Full option luxury VIP Van. Perfect for group travel, business seminars, or long distance trips.",
                 f1Title: "⏱️ 24/7 Support",
@@ -653,7 +781,8 @@
                 f2Desc: "Customized private trips, multi-day tours, round-trips or one-way service with local drivers.",
                 f3Title: "Safe & Reliable",
                 f3Desc: "Professional, polite drivers with extensive route knowledge to guarantee your safe arrival.",
-                alertMsg: "🎉 Calling Taxi booking details received!\n\n📍 Pickup: {pickup}\n🏁 Drop-off: {dropoff}\n📞 Contact Phone: {phone}\n\nOpening LINE App to confirm your driver availability..."
+                
+                alertMsg: "🎉 Calling Taxi booking details received!\n\n👤 Name: {name}\n📅 Date: {date}\n📞 Phone: {phone}\n📍 Pickup: {pickup}\n🏁 Drop-off: {dropoff}\n👥 Passengers: {passengers}\n🧳 Luggage: {luggage} Bags\n🚗 Car Type: {cartype}\n✈️ Flight No: {flight}\n📝 Notes: {notes}\n\nOpening LINE App to confirm your driver availability..."
             }
         };
 
@@ -685,18 +814,32 @@
             document.getElementById('hero-desc').innerText = t.heroDesc;
             document.getElementById('form-title').innerText = t.formTitle;
             
+            document.getElementById('lbl-name').innerText = t.lblName + " / Name";
+            document.getElementById('cust-name').placeholder = t.phName;
+            document.getElementById('lbl-date').innerText = t.lblDate + " / Service Date";
+            document.getElementById('lbl-phone').innerText = t.lblPhone;
+            document.getElementById('phone').placeholder = t.phPhone;
+            
             document.getElementById('lbl-pickup').innerText = t.lblPickup;
             document.getElementById('pickup').placeholder = t.phPickup;
             document.getElementById('lbl-dropoff').innerText = t.lblDropoff;
             document.getElementById('dropoff').placeholder = t.phDropoff;
-            document.getElementById('lbl-cartype').innerText = t.lblCarType;
             
+            document.getElementById('lbl-passengers').innerText = t.lblPassengers + " / Passengers";
+            document.getElementById('passengers').placeholder = t.phPassengers;
+            document.getElementById('lbl-luggage').innerText = t.lblLuggage + " / Luggage";
+            document.getElementById('luggage').placeholder = t.phLuggage;
+            
+            document.getElementById('lbl-cartype').innerText = t.lblCarType;
             document.getElementById('opt-sedan').innerText = t.optSedan;
             document.getElementById('opt-suv').innerText = t.optSuv;
             document.getElementById('opt-van').innerText = t.optVan;
             
-            document.getElementById('lbl-phone').innerText = t.lblPhone;
-            document.getElementById('phone').placeholder = t.phPhone;
+            document.getElementById('lbl-flight').innerText = t.lblFlight + " / Flight Number";
+            document.getElementById('flight-num').placeholder = t.phFlight;
+            document.getElementById('lbl-notes').innerText = t.lblNotes + " / Special Requests";
+            document.getElementById('notes').placeholder = t.phNotes;
+            
             document.getElementById('btn-submit').innerText = t.btnSubmit;
             
             document.getElementById('contact-title').innerText = t.contactTitle;
@@ -722,15 +865,31 @@
         function bookTaxi(event) {
             event.preventDefault();
             
+            const name = document.getElementById('cust-name').value;
+            const date = document.getElementById('pickup-date').value;
+            const phone = document.getElementById('phone').value;
             const pickup = document.getElementById('pickup').value;
             const dropoff = document.getElementById('dropoff').value;
-            const phone = document.getElementById('phone').value;
+            const passengers = document.getElementById('passengers').value;
+            const luggage = document.getElementById('luggage').value;
+            const carSelect = document.getElementById('car-type');
+            const cartype = carSelect.options[carSelect.selectedIndex].text;
+            const flight = document.getElementById('flight-num').value || '-';
+            const notes = document.getElementById('notes').value || '-';
+            
             const t = translations[currentLang];
 
             let msg = t.alertMsg
+                .replace('{name}', name)
+                .replace('{date}', date)
+                .replace('{phone}', phone)
                 .replace('{pickup}', pickup)
                 .replace('{dropoff}', dropoff)
-                .replace('{phone}', phone);
+                .replace('{passengers}', passengers)
+                .replace('{luggage}', luggage)
+                .replace('{cartype}', cartype)
+                .replace('{flight}', flight)
+                .replace('{notes}', notes);
 
             alert(msg);
             window.open('https://lin.ee/98iQdw6', '_blank');
