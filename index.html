@@ -120,8 +120,8 @@
         }
 
         /* ===================================================
-           [แก้ไขระบบแสดงผลรูปภาพ] เปลี่ยนมาใช้โครงสร้าง Flex + HTML <img> 
-           หมดปัญหาจอดำ โหลดภาพขึ้นแน่นอน 100%
+           [ปรับปรุงใหม่] ส่วนแสดงแบนเนอร์เดี่ยวสำหรับ menu_01.png
+           ปรับแต่งขนาดให้พอดีสัดส่วนทั้งคอมพิวเตอร์และมือถืออัตโนมัติ
            =================================================== */
         .premium-hero-banner {
             width: 100%;
@@ -133,47 +133,28 @@
             border-bottom: 5px solid #fbc02d;
         }
 
-        .banner-grid-wrapper {
+        .banner-single-wrapper {
             width: 100%;
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* แบ่งครึ่งฝั่งสนามบิน และฝั่งรถยนต์ */
-        }
-
-        .banner-img-item {
-            width: 100%;
-            height: 350px;
+            max-width: 1200px; /* จำกัดความกว้างสูงสุดเพื่อให้ภาพไม่ขยายใหญ่เกินไปบนจอคอมกว้างๆ */
             position: relative;
-            overflow: hidden;
         }
 
-        .banner-img-item img {
+        .banner-single-wrapper img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* จัดให้รูปอยู่ตรงกลางพอดิบพอดี */
+            height: auto; /* รักษาอัตราส่วนของรูปภาพดั้งเดิมไว้ ไม่ให้ภาพบิดเบี้ยว */
             display: block;
-            transition: transform 0.5s ease;
         }
 
-        /* ใส่เอฟเฟกต์แสงเงาระดับพรีเมียมล้อมรอบรูปภาพ */
-        .banner-img-item::after {
+        /* ใส่เอฟเฟกต์แสงเงาจางๆ ล้อมรอบรูปภาพเพื่อความพรีเมียม */
+        .banner-single-wrapper::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 100%);
             pointer-events: none;
-        }
-
-        @media (max-width: 768px) {
-            .banner-grid-wrapper {
-                grid-template-columns: 1fr; /* บนหน้าจอมือถือจะซ้อนลงมาเป็นแนวตั้งให้อ่านง่ายแสดงรูปชัดเจน */
-            }
-            .banner-img-item {
-                height: 220px; /* ปรับขนาดความสูงให้พอดีกับหน้าจอมือถือไม่ยาวเกินไป */
-            }
         }
 
         /* โซนข้อความต้อนรับด้านล่างภาพแบนเนอร์ */
@@ -522,17 +503,10 @@
         <a href="#fleet" id="nav-fleet">ประเภทรถที่ให้บริการ</a>
     </nav>
 
-    <!-- [แก้ไขให้แล้ว] โซนแบนเนอร์ใหญ่: ดึงรูปภาพผ่าน HTML โดยตรง หมดปัญหารูปไม่แสดงผล และไม่มีข้อความบังหน้าภาพกวนใจ -->
-    <section class="premium-hero-banner" aria-label="Calling Taxi Service Images">
-        <div class="banner-grid-wrapper">
-            <!-- ภาพที่ 1: ภาพสนามบินสุวรรณภูมิและสนามบินดอนเมือง -->
-            <div class="banner-img-item">
-                <img src="airport-banner.jpg" alt="บริการรับส่งสนามบินสุวรรณภูมิ สนามบินดอนเมือง 24 ชั่วโมง">
-            </div>
-            <!-- ภาพที่ 2: ภาพกลุ่มรถยนต์ Taxi, Altis, SUV, Van ที่ให้บริการ -->
-            <div class="banner-img-item">
-                <img src="cars-banner.jpg" alt="ประเภทรถยนต์ที่ให้บริการ Taxi, Altis, SUV, VIP Van">
-            </div>
+    <!-- [แก้ไขส่วนนี้เรียบร้อย] แสดงรูปแบนเนอร์เดี่ยว menu_01.png ขนาดพอดีสัดส่วนเป๊ะๆ ไม่ทับซ้อน -->
+    <section class="premium-hero-banner" aria-label="Calling Taxi Banner">
+        <div class="banner-single-wrapper">
+            <img src="menu_01.png" alt="Explore Thailand with Private Car Service - Airport Transfer & Private Tour">
         </div>
     </section>
 
