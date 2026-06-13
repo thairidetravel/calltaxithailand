@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calling Taxi - บริการเรียกรถแท็กซี่ 24 ชั่วโมง</title>
+    <!-- นำเข้า Font สวยๆ จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,7 +19,7 @@
             color: #333;
         }
 
-        /* Header / Navigation */
+        /* Header / Navigation Bar สีเหลืองหลัก */
         header {
             background-color: #fbc02d; /* สีเหลืองแท็กซี่ */
             padding: 15px 5%;
@@ -46,11 +47,43 @@
             margin-left: 5px;
         }
 
-        nav a {
-            color: #000;
+        /* ปุ่มโทรสายด่วนด้านบนขวา */
+        .header-phone {
+            background-color: #d32f2f;
+            color: white;
             text-decoration: none;
-            margin-left: 20px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-phone:hover {
+            background-color: #b71c1c;
+        }
+
+        /* --- แถบเมนูย่อยใหม่ (วางอยู่ใต้กรอบสีเหลือง) --- */
+        .sub-nav {
+            background-color: #222;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .sub-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
             font-weight: 400;
+            transition: 0.3s;
+        }
+
+        .sub-nav a:hover {
+            color: #fbc02d; /* เปลี่ยนเป็นสีเหลืองเมื่อเอาเมาส์วาง */
         }
 
         /* Hero Section */
@@ -309,7 +342,7 @@
             margin: 10px;
             text-align: center;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.055);
         }
 
         .feature-box h3 {
@@ -317,7 +350,7 @@
             color: #fbc02d;
         }
 
-        /* --- Banner Section (ก่อนถึง Footer) --- */
+        /* --- Banner Section --- */
         .banner-container {
             max-width: 1100px;
             margin: 0 auto 30px auto;
@@ -345,22 +378,28 @@
 </head>
 <body>
 
+    <!-- แถบเมนูกรอบสีเหลืองด้านบนสุด (เหลือเฉพาะปุ่มโทร) -->
     <header>
         <a href="#" class="logo">Calling<span>TAXI</span></a>
-        <nav>
-            <a href="#booking">จองรถ</a>
-            <a href="#fleet">ประเภทรถ</a>
-            <a href="tel:0852242135">📞 โทรสายด่วน</a>
-        </nav>
+        <a href="tel:0852242135" class="header-phone">📞 โทรสายด่วน: 085-2242135</a>
     </header>
 
+    <!-- แถบเมนูย่อยใหม่ (ย้ายลงมาอยู่ใต้กรอบสีเหลือง) -->
+    <div class="sub-nav">
+        <a href="#booking">จองรถออนไลน์</a>
+        <a href="#fleet">ประเภทรถที่ให้บริการ</a>
+    </div>
+
+    <!-- ส่วนหัวโปรโมทหน้าเว็บ -->
     <section class="hero">
         <h1>Calling Taxi</h1>
         <p>บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
     </section>
 
+    <!-- คอนเทนต์หลัก (ฟอร์ม & ติดต่อ) -->
     <div class="main-container" id="booking">
         
+        <!-- ฝั่งซ้าย: แบบฟอร์มกรอกข้อมูลเรียกแท็กซี่ -->
         <div class="card">
             <h2>🚕 จองรถแท็กซี่ออนไลน์</h2>
             <form id="taxiForm" onsubmit="bookTaxi(event)">
@@ -388,6 +427,7 @@
             </form>
         </div>
 
+        <!-- ฝั่งขวา: ช่องทางการติดต่อโดยตรง -->
         <div class="card">
             <h2>💬 ช่องทางติดต่อตรง</h2>
             
@@ -403,11 +443,13 @@
             <div class="qr-section-title">✨ หรือสแกนผ่านแอปพลิเคชัน (You have a trip I have a Car)</div>
             
             <div class="qr-grid">
+                <!-- คิวอาร์โค้ด WeChat -->
                 <div class="qr-box">
                     <img src="Screenshot_20260613_065900_WeChat.jpg" alt="WeChat QR">
                     <p style="color: #07C160;">WeChat</p>
                     <span>Tel: 0852242135</span>
                 </div>
+                <!-- คิวอาร์โค้ด WhatsApp -->
                 <div class="qr-box">
                     <img src="Screenshot_20260613_065846_WhatsApp.jpg" alt="WhatsApp QR">
                     <p style="color: #25D366;">WhatsApp</p>
@@ -417,10 +459,12 @@
         </div>
     </div>
 
+    <!-- โซนแสดงรูปรถที่ให้บริการ (Our Fleet) -->
     <div class="fleet-container" id="fleet">
         <h2 class="fleet-title">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
         <div class="fleet-grid">
             
+            <!-- คันที่ 1: Sedan Altis -->
             <div class="car-card">
                 <div class="car-img-wrapper">
                     <img src="altis.png" alt="Toyota Altis Taxi">
@@ -431,6 +475,7 @@
                 </div>
             </div>
 
+            <!-- คันที่ 2: SUV -->
             <div class="car-card">
                 <div class="car-img-wrapper">
                     <img src="suv.png" alt="SUV Car">
@@ -441,6 +486,7 @@
                 </div>
             </div>
 
+            <!-- คันที่ 3: Van -->
             <div class="car-card">
                 <div class="car-img-wrapper">
                     <img src="van_03.png" alt="VIP Van">
@@ -454,6 +500,7 @@
         </div>
     </div>
 
+    <!-- ส่วนจุดเด่นบริการ -->
     <section class="features">
         <div class="feature-box">
             <h3>⏱️ บริการ 24 ชั่วโมง</h3>
@@ -469,10 +516,12 @@
         </div>
     </section>
 
+    <!-- ส่วนแสดงแบนเนอร์ก่อนถึง Footer -->
     <div class="banner-container">
         <img src="banner728_90.jpg" alt="Thailand Travel Tour Banner">
     </div>
 
+    <!-- ส่วนท้ายเว็บ -->
     <footer>
         <p>&copy; 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.</p>
     </footer>
