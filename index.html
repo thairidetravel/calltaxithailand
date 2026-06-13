@@ -7,10 +7,13 @@
     <meta name="description" content="บริการรถแท็กซี่ รถเหมา รถตู้ นำเที่ยวทั่วไทยและรับส่งสนามบิน 24 ชั่วโมง จองง่าย บริการสุภาพ ปลอดภัย ราคามาตรฐาน">
     <meta name="keywords" content="เรียกแท็กซี่, รถเหมา, รถตู้, รับส่งสนามบิน, สุวรรณภูมิ, ดอนเมือง, เเที่ยงทั่วไทย, แท็กซี่ 24 ชม">
     
+    <!-- Tailwind CSS Via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Fonts (Prompt & Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -25,6 +28,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
+    <!-- Header & Language Switcher -->
     <header class="bg-[#fbc02d] px-[5%] py-2.5 flex justify-between items-center shadow-md sticky top-0 z-50">
         <a href="#" class="flex items-center gap-3 text-none">
             <img src="logo.png" alt="Calling Taxi Logo" class="h-[50px] w-auto rounded-full shadow-sm">
@@ -39,6 +43,7 @@
 
     <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-6 space-y-6">
         
+        <!-- Hero Section Banner -->
         <section class="w-full rounded-xl overflow-hidden shadow-sm bg-white border border-gray-200">
             <img src="menu_01.png" alt="Calling Taxi Premium Service Banner" class="w-full h-auto object-cover max-h-[400px]">
             <div class="p-6 text-center space-y-2 border-t border-gray-100 bg-white">
@@ -47,34 +52,59 @@
             </div>
         </section>
 
-        <section class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm text-center space-y-6">
+        <!-- 📲 Contact & Booking Channels Section -->
+        <section class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm text-center space-y-6">
             <div class="space-y-2">
                 <h2 id="bookingMainTitle" class="text-2xl md:text-3xl font-bold text-gray-900 flex items-center justify-center gap-2">
                     ⚡ <span class="text-black">จองรถตอนนี้ บริการด่วน 24 ชั่วโมง</span> ⚡
                 </h2>
-                <p id="bookingSubTitle" class="text-gray-600 text-base md:text-lg font-medium">✨ สะดวก รวดเร็ว การันตีมีรถบริการแน่นอน คนขับสุภาพ ปลอดภัย ราคามาตรฐาน</p>
+                <p id="bookingSubTitle" class="text-gray-600 text-base md:text-lg font-medium">✨ สะดวก รวดเร็ว มีรถบริการแน่นอน คนขับสุภาพ ปลอดภัย ราคามาตรฐาน</p>
             </div>
 
-            <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 inline-block max-w-[320px] w-full mx-auto shadow-inner">
-                <img src="line_qr.png" alt="LINE QR Code สำหรับจองรถ" class="w-full h-auto mx-auto rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                <p id="scanText" class="text-sm font-semibold text-gray-500 mt-4"><i class="fa-solid fa-qrcode mr-1"></i> สแกน QR Code เพื่อเปิดแอป LINE</p>
-            </div>
-
-            <div class="max-w-md mx-auto pt-2 space-y-3">
-                <p id="clickText" class="text-sm font-medium text-gray-500">หรือคลิกปุ่มด้านล่างเพื่อแอดไลน์จองรถได้ทันที</p>
-                
-                <a href="https://line.me/R/ti/p/@your_line_id" class="w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-4 px-6 rounded-xl transition duration-300 shadow-md text-xl flex items-center justify-center gap-3 decoration-none">
-                    <i class="fa-brands fa-line text-2xl"></i>
-                    <span id="btnLineText">จองรถตอนนี้ (คลิกเพื่อเปิด LINE)</span>
-                </a>
-
-                <div class="inline-flex items-center gap-2 bg-[#fbc02d]/20 text-black px-4 py-1.5 rounded-full text-sm font-bold">
-                    <i class="fa-solid fa-circle-check text-[#fbc02d]"></i>
-                    <span id="badgeText">แอดไลน์แล้วส่งข้อมูล ต้นทาง-ปลายทาง ได้เลยครับ</span>
+            <!-- Main Quick Contact (LINE QR Code & Button) -->
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 max-w-md mx-auto shadow-sm space-y-4">
+                <div class="max-w-[220px] w-full mx-auto bg-white p-3 rounded-xl border border-gray-100 shadow-inner">
+                    <!-- อัปเดตชื่อรูปภาพเป็น L_911btrma_BW.png -->
+                    <img src="L_911btrma_BW.png" alt="LINE QR Code สำหรับจองรถ" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
                 </div>
+                <p id="scanText" class="text-sm font-semibold text-gray-500"><i class="fa-solid fa-qrcode mr-1"></i> สแกน QR Code หรือกดปุ่มด้านล่างเพื่อจองผ่าน LINE</p>
+                
+                <!-- อัปเดตลิงก์ LINE เป็นลิงก์ตรงของคุณ -->
+                <a href="https://lin.ee/xwb1lQj" target="_blank" class="w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-3.5 px-6 rounded-xl transition duration-300 shadow-md text-lg flex items-center justify-center gap-3 decoration-none">
+                    <i class="fa-brands fa-line text-2xl"></i>
+                    <span id="btnLineText">จองรถผ่าน LINE (คลิกเลย)</span>
+                </a>
+            </div>
+
+            <!-- 🌍 International Chat Channels (WeChat & WhatsApp) -->
+            <div class="space-y-4 max-w-md mx-auto pt-2">
+                <h3 id="interTitle" class="text-lg font-bold text-gray-800 border-b border-gray-100 pb-2">🌐 ช่องทางติดต่อสำหรับชาวต่างชาติ (International Customers)</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <!-- WhatsApp Button -->
+                    <!-- ปรับแต่งลิงก์โดยเปลี่ยนเบอร์โทรตรงแฮชแท็ก เช่น https://wa.me/66812345678 -->
+                    <a href="https://wa.me/#" target="_blank" class="bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-3 px-4 rounded-xl transition duration-300 shadow-sm text-base flex items-center justify-center gap-2 decoration-none">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <!-- WeChat Button -->
+                    <!-- ปรับแต่งลิงก์โดยใส่ลิงก์แอดเพื่อนหรือหน้ารวมช่องทางของ WeChat ได้ครับ -->
+                    <a href="#" target="_blank" class="bg-[#00c300] hover:bg-[#00b000] text-white font-bold py-3 px-4 rounded-xl transition duration-300 shadow-sm text-base flex items-center justify-center gap-2 decoration-none">
+                        <i class="fa-brands fa-weixin text-xl"></i>
+                        <span>WeChat</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sub Badge Accent -->
+            <div class="inline-flex items-center gap-2 bg-[#fbc02d]/20 text-black px-4 py-1.5 rounded-full text-sm font-bold mt-2">
+                <i class="fa-solid fa-circle-check text-[#fbc02d]"></i>
+                <span id="badgeText">แอดไลน์หรือทักแชทแล้วส่งข้อมูล ต้นทาง-ปลายทาง ได้เลยครับ</span>
             </div>
         </section>
 
+        <!-- Fleet Showcase -->
         <section class="space-y-4">
             <h2 id="servicesHeading" class="text-xl font-bold text-center text-gray-800">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -102,6 +132,7 @@
             </div>
         </section>
 
+        <!-- 3 Feature Highlights -->
         <section class="grid grid-cols-1 gap-4">
             <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm text-center space-y-2">
                 <h3 id="f1Title" class="text-xl font-bold text-[#fbc02d]">⏱️ บริการ 24 ชั่วโมง</h3>
@@ -117,6 +148,7 @@
             </div>
         </section>
 
+        <!-- Bottom Image Banner -->
         <section class="w-full max-w-4xl mx-auto text-center">
             <img src="banner728_90.jpg" alt="แบนเนอร์บริการ Calling Taxi ท่องเที่ยวทั่วไทย" class="w-full h-auto rounded-lg shadow-sm mx-auto">
         </section>
@@ -127,6 +159,7 @@
         <p id="footerText" class="text-sm px-4 leading-relaxed">&copy; 2026 Calling Taxi Service. All rights reserved.</p>
     </footer>
 
+    <!-- Language System JS -->
     <script>
         const langData = {
             TH: {
@@ -134,11 +167,11 @@
                 heroTitle: "Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย",
                 heroSubtitle: "บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง",
                 bookingMainTitle: "⚡ จองรถตอนนี้ บริการด่วน 24 ชั่วโมง ⚡",
-                bookingSubTitle: "✨ สะดวก รวดเร็ว การันตีมีรถบริการแน่นอน คนขับสุภาพ ปลอดภัย ราคามาตรฐาน",
-                scanText: "📸 สแกน QR Code เพื่อเปิดแอป LINE",
-                clickText: "หรือคลิกปุ่มด้านล่างเพื่อแอดไลน์จองรถได้ทันที",
-                btnLineText: "จองรถตอนนี้ (คลิกเพื่อเปิด LINE)",
-                badgeText: "แอดไลน์แล้วส่งข้อมูล ต้นทาง-ปลายทาง ได้เลยครับ",
+                bookingSubTitle: "✨ สะดวก รวดเร็ว มีรถบริการแน่นอน คนขับสุภาพ ปลอดภัย ราคามาตรฐาน",
+                scanText: "📸 สแกน QR Code หรือกดปุ่มด้านล่างเพื่อจองผ่าน LINE",
+                btnLineText: "จองรถผ่าน LINE (คลิกเลย)",
+                interTitle: "🌐 ช่องทางติดต่อสำหรับชาวต่างชาติ (International Customers)",
+                badgeText: "แอดไลน์หรือทักแชทแล้วส่งข้อมูล ต้นทาง-ปลายทาง ได้เลยครับ",
                 servicesHeading: "🚖 รถยนต์ที่เราเปิดให้บริการ",
                 fleetSedanTitle: "แท็กซี่ทั่วไป (Sedan)",
                 fleetSedanDesc: "รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน",
@@ -160,10 +193,10 @@
                 heroSubtitle: "24/7 Private Taxi & Transfer Service, Custom Tours Across Thailand",
                 bookingMainTitle: "⚡ Book Your Ride Now | 24/7 Service ⚡",
                 bookingSubTitle: "✨ Fast, reliable, and secure booking. Professional drivers & fixed transparent pricing.",
-                scanText: "📸 Scan QR Code to open LINE app",
-                clickText: "Or click the button below to contact us via LINE instantly",
-                btnLineText: "Book Now (Click to chat via LINE)",
-                badgeText: "Add LINE and send your pickup & drop-off details immediately",
+                scanText: "📸 Scan QR Code or click the button below to book via LINE",
+                btnLineText: "Book via LINE (Click Here)",
+                interTitle: "🌐 International Customers Contact Channels",
+                badgeText: "Add chat apps and send your pickup & drop-off details immediately",
                 servicesHeading: "🚖 Our Service Vehicles Fleet",
                 fleetSedanTitle: "Standard Taxi (Sedan)",
                 fleetSedanDesc: "Toyota Corolla Altis or equivalent. Perfect for 1-4 passengers with standard luggage.",
@@ -195,9 +228,9 @@
             document.getElementById('heroSubtitle').innerText = data.heroSubtitle;
             document.getElementById('bookingMainTitle').innerHTML = lang === 'TH' ? `⚡ <span class="text-black">จองรถตอนนี้ บริการด่วน 24 ชั่วโมง</span> ⚡` : `⚡ <span class="text-black">Book Your Ride Now | 24/7 Service</span> ⚡`;
             document.getElementById('bookingSubTitle').innerText = data.bookingSubTitle;
-            document.getElementById('scanText').innerHTML = lang === 'TH' ? `<i class="fa-solid fa-qrcode mr-1"></i> สแกน QR Code เพื่อเปิดแอป LINE` : `<i class="fa-solid fa-qrcode mr-1"></i> Scan QR Code to open LINE app`;
-            document.getElementById('clickText').innerText = data.clickText;
+            document.getElementById('scanText').innerHTML = lang === 'TH' ? `<i class="fa-solid fa-qrcode mr-1"></i> สแกน QR Code หรือกดปุ่มด้านล่างเพื่อจองผ่าน LINE` : `<i class="fa-solid fa-qrcode mr-1"></i> Scan QR Code or click the button below to book via LINE`;
             document.getElementById('btnLineText').innerText = data.btnLineText;
+            document.getElementById('interTitle').innerText = data.interTitle;
             document.getElementById('badgeText').innerText = data.badgeText;
             document.getElementById('servicesHeading').innerText = data.servicesHeading;
             document.getElementById('fleetSedanTitle').innerText = data.fleetSedanTitle;
