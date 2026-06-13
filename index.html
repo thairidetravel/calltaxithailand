@@ -73,6 +73,8 @@
                     <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100 shadow-inner">
                         <img src="line_qr.png" alt="LINE QR Code" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
                     </div>
+                    <!-- ข้อความใต้ QR Code ตามสั่ง -->
+                    <p class="qr-label text-base font-bold text-red-600 my-1">จองรถด่วน</p>
                     <a href="https://lin.ee/xwb1lQj" target="_blank" class="w-full bg-[#06c755] hover:bg-[#05b34c] text-white font-bold py-2.5 px-4 rounded-xl transition duration-300 shadow-sm text-sm flex items-center justify-center gap-2 decoration-none">
                         <i class="fa-brands fa-line text-lg"></i>
                         <span class="btnLineText">แอดไลน์จองรถ</span>
@@ -88,7 +90,8 @@
                     <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100 shadow-inner">
                         <img src="whatsapp.jpg" alt="WhatsApp QR Code" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
                     </div>
-                    <!-- เปลี่ยนเบอร์โทรตรงด้านหลังลิ้งค์ https://wa.me/เบอร์โทรของคุณ (เช่น 66812345678) -->
+                    <!-- ข้อความใต้ QR Code ตามสั่ง -->
+                    <p class="qr-label text-base font-bold text-red-600 my-1">จองรถด่วน</p>
                     <a href="https://wa.me/#" target="_blank" class="w-full bg-[#25d366] hover:bg-[#20ba5a] text-white font-bold py-2.5 px-4 rounded-xl transition duration-300 shadow-sm text-sm flex items-center justify-center gap-2 decoration-none">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>WhatsApp Chat</span>
@@ -104,6 +107,8 @@
                     <div class="max-w-[160px] w-full mx-auto bg-white p-2 rounded-xl border border-gray-100 shadow-inner">
                         <img src="wechat.jpg" alt="WeChat QR Code" class="w-full h-auto mx-auto rounded-lg transition-transform duration-300 hover:scale-105">
                     </div>
+                    <!-- ข้อความใต้ QR Code ตามสั่ง -->
+                    <p class="qr-label text-base font-bold text-red-600 my-1">จองรถด่วน</p>
                     <a href="#" target="_blank" class="w-full bg-[#00c300] hover:bg-[#00b000] text-white font-bold py-2.5 px-4 rounded-xl transition duration-300 shadow-sm text-sm flex items-center justify-center gap-2 decoration-none">
                         <i class="fa-brands fa-weixin text-lg"></i>
                         <span>WeChat Booking</span>
@@ -197,7 +202,8 @@
                 f2Desc: "จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ",
                 f3Title: "🛡️ เดินทางปลอดภัย",
                 f3Desc: "คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง",
-                footerText: "© 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved."
+                footerText: "© 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.",
+                qrLabel: "จองรถด่วน"
             },
             EN: {
                 langText: "TH",
@@ -219,7 +225,8 @@
                 f2Desc: "Customized private trips, multi-day tours, round-trips or one-way service with local drivers.",
                 f3Title: "🛡️ Safe & Reliable",
                 f3Desc: "Professional, polite drivers with extensive route knowledge to guarantee your safe arrival.",
-                footerText: "© 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved."
+                footerText: "© 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.",
+                qrLabel: "Book Now"
             }
         };
 
@@ -253,6 +260,12 @@
             document.getElementById('f3Desc').innerText = data.f3Desc;
             document.getElementById('footerText').innerText = data.footerText;
             
+            // Translate the static text below QR Codes
+            const qrLabels = document.querySelectorAll('.qr-label');
+            qrLabels.forEach(el => {
+                el.innerText = data.qrLabel;
+            });
+
             // Translate the dynamic labels inside the QR cards
             const lineTexts = document.querySelectorAll('.btnLineText');
             lineTexts.forEach(el => {
