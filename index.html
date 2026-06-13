@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You have a trip I have a Car - Calling Taxi</title>
+    <title>Calling Taxi - บริการเรียกรถแท็กซี่ 24 ชั่วโมง</title>
+    <!-- นำเข้า Font สวยๆ จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -32,7 +33,7 @@
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
             color: #000;
             text-decoration: none;
@@ -56,7 +57,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1494959764136-6be9eb3c261e?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
-            height: 50vh;
+            height: 45vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -67,7 +68,7 @@
         }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 42px;
             margin-bottom: 10px;
         }
 
@@ -77,13 +78,13 @@
             font-weight: 300;
         }
 
-        /* Booking & Contact Section */
+        /* Main Content Container */
         .main-container {
             max-width: 1100px;
-            margin: -50px auto 50px auto;
+            margin: -40px auto 50px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 30px;
             position: relative;
             z-index: 10;
@@ -112,6 +113,7 @@
             padding-bottom: 10px;
         }
 
+        /* Form Group */
         .form-group {
             margin-bottom: 15px;
         }
@@ -153,11 +155,12 @@
             background-color: #f9a825;
         }
 
-        /* Contact Channels */
+        /* Contact Section */
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .btn-contact {
@@ -179,54 +182,64 @@
         .btn-phone { background-color: #d32f2f; }
         .btn-phone:hover { background-color: #b71c1c; }
 
-        /* QR Codes Display */
+        .btn-line img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* QR Code Layout */
+        .qr-section-title {
+            font-size: 14px;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
         .qr-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin-top: 20px;
             text-align: center;
         }
 
         .qr-box {
-            background: #fcfcfc;
-            padding: 10px;
-            border: 1px solid #eee;
+            background: #fdfdfd;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr-box img {
+            width: 100%;
+            max-width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #eee;
         }
 
         .qr-box p {
             font-size: 14px;
             font-weight: 600;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .qr-box span {
-            font-size: 12px;
-            color: #666;
-            display: block;
+            font-size: 11px;
+            color: #777;
         }
 
-        .qr-image-placeholder {
-            width: 100%;
-            height: 140px;
-            background-color: #eaedf2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #888;
-            border-radius: 4px;
-            border: 2px dashed #ccc;
-        }
-
-        /* Features Section */
+        /* Features */
         .features {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             max-width: 1100px;
-            margin: 40px auto;
+            margin: 20px auto;
             padding: 0 20px;
         }
 
@@ -243,7 +256,7 @@
 
         .feature-box h3 {
             margin-bottom: 10px;
-            color: #f9a825;
+            color: #fbc02d;
         }
 
         /* Footer */
@@ -259,21 +272,25 @@
 </head>
 <body>
 
+    <!-- แถบเมนูด้านบน -->
     <header>
-        <a href="#" class="logo">You have a trip I have a Car</a>
+        <a href="#" class="logo">Calling<span>TAXI</span></a>
         <nav>
             <a href="#booking">จองรถ</a>
-            <a href="tel:0852242135">📞 โทรเลย</a>
+            <a href="tel:0852242135">📞 โทรสายด่วน</a>
         </nav>
     </header>
 
+    <!-- ส่วนหัวโปรโมทหน้าเว็บ -->
     <section class="hero">
-        <h1>You have a trip, I have a Car</h1>
-        <p>บริการรถแท็กซี่นำเที่ยว รับ-ส่งสนามบิน และเดินทางไปต่างจังหวัดทั่วไทย 24 ชั่วโมง</p>
+        <h1>Calling Taxi</h1>
+        <p>บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
     </section>
 
+    <!-- คอนเทนต์หลัก -->
     <div class="main-container" id="booking">
         
+        <!-- ฝั่งซ้าย: แบบฟอร์มกรอกข้อมูลเรียกแท็กซี่ -->
         <div class="card">
             <h2>🚕 จองรถแท็กซี่ออนไลน์</h2>
             <form id="taxiForm" onsubmit="bookTaxi(event)">
@@ -294,62 +311,71 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="phone">เบอร์โทรศัพท์ติดต่อ</label>
-                    <input type="tel" id="phone" value="085-2242135" required>
+                    <label for="phone">เบอร์โทรศัพท์ติดต่อของคุณ</label>
+                    <input type="tel" id="phone" placeholder="กรอกเบอร์โทรศัพท์ของคุณ" required>
                 </div>
-                <button type="submit" class="btn-submit">ส่งข้อมูลเรียกรถ</button>
+                <button type="submit" class="btn-submit">ส่งข้อมูลเพื่อเรียกรถ</button>
             </form>
         </div>
 
+        <!-- ฝั่งขวา: ช่องทางการติดต่อโดยตรง (อ้างอิงจากข้อมูลของคุณ) -->
         <div class="card">
-            <h2>💬 ติดต่อเราโดยตรง</h2>
+            <h2>💬 ช่องทางติดต่อตรง</h2>
+            
             <div class="contact-methods">
+                <!-- ปุ่มเชื่อมต่อไปยัง LINE Official -->
                 <a href="https://lin.ee/98iQdw6" target="_blank" class="btn-contact btn-line">
-                    🟢 กดเพื่อเพิ่มเพื่อนใน LINE (คลิกเลย)
+                    <img src="line_qr.png" alt="LINE"> กดเพื่อเพิ่มเพื่อนใน LINE (คลิกเลย)
                 </a>
+                <!-- ปุ่มกดโทรด่วน -->
                 <a href="tel:0852242135" class="btn-contact btn-phone">
                     📞 โทรสายด่วน: 085-2242135
                 </a>
             </div>
 
+            <div class="qr-section-title">✨ หรือสแกนผ่านแอปพลิเคชัน (You have a trip I have a Car)</div>
+            
+            <!-- โซนคิวอาร์โค้ดแสดงรูปตามไฟล์ของคุณ -->
             <div class="qr-grid">
+                <!-- คิวอาร์โค้ด WeChat -->
                 <div class="qr-box">
-                    <div class="qr-image-placeholder">[ QR WeChat ]</div>
+                    <img src="Screenshot_20260613_065900_WeChat.jpg" alt="WeChat QR">
                     <p style="color: #07C160;">WeChat</p>
-                    <span>ID: 0852242135</span>
+                    <span>Tel: 0852242135</span>
                 </div>
+                <!-- คิวอาร์โค้ด WhatsApp -->
                 <div class="qr-box">
-                    <div class="qr-image-placeholder">[ QR WhatsApp ]</div>
+                    <img src="Screenshot_20260613_065846_WhatsApp.jpg" alt="WhatsApp QR">
                     <p style="color: #25D366;">WhatsApp</p>
-                    <span>+66 85 224 2135</span>
+                    <span>You Have Trip I have Car</span>
                 </div>
             </div>
-            <p style="font-size: 13px; color: #777; text-align: center; margin-top: 15px;">
-                * สำหรับลูกค้าชาวต่างชาติ สามารถสแกนคิวอาร์โค้ด WeChat หรือ WhatsApp ด้านบนเพื่อแชทคุยได้ทันที
-            </p>
         </div>
 
     </div>
 
+    <!-- ส่วนจุดเด่นบริการ -->
     <section class="features">
         <div class="feature-box">
             <h3>⏱️ บริการ 24 ชั่วโมง</h3>
-            <p>ไม่ว่าจะไปสนามบินไฟลท์ดึก หรือเดินทางเร่งด่วน พร้อมให้บริการตลอดเวลา</p>
+            <p>สแตนบายด์รอรับคุณทุกที่ ทุกเวลา ไม่ว่าจะไปสนามบินหรือเดินทางเร่งด่วน</p>
         </div>
         <div class="feature-box">
-            <h3>🗺️ นำเที่ยวทั่วไทย</h3>
-            <p>บริการเหมารถไปต่างจังหวัด พาท่องเที่ยวตามแพลน มั่นใจในความปลอดภัย</p>
+            <h3>🗺️ เหมารถนำเที่ยว</h3>
+            <p>จัดทริปส่วนตัว ท่องเที่ยวต่างจังหวัด ไปเที่ยว ไปกลับ หรือค้างคืนเราพร้อมบริการ</p>
         </div>
         <div class="feature-box">
-            <h3>💼 คนขับมืออาชีพ</h3>
-            <p>คนขับชำนาญเส้นทาง สุภาพ ตรงต่อเวลา และดูแลความปลอดภัยของคุณตลอดทริป</p>
+            <h3>🛡️ เดินทางปลอดภัย</h3>
+            <p>คนขับมืออาชีพ สุภาพ ชำนาญเส้นทาง และดูแลผู้โดยสารตลอดการเดินทาง</p>
         </div>
     </section>
 
+    <!-- ส่วนท้ายเว็บ -->
     <footer>
-        <p>&copy; 2026 You have a trip I have a Car. All rights reserved.</p>
+        <p>&copy; 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.</p>
     </footer>
 
+    <!-- ส่วนการทำระบบส่งข้อมูลไปที่ LINE -->
     <script>
         function bookTaxi(event) {
             event.preventDefault();
@@ -359,10 +385,9 @@
             const carType = document.getElementById('car-type').value;
             const phone = document.getElementById('phone').value;
 
-            // จำลองส่งข้อมูล และนำทางลูกค้าไปที่ไลน์เพื่อส่งข้อความจองรถต่อได้ง่ายขึ้น
-            alert(`🎉 ระบบบันทึกข้อมูลเบื้องต้นเรียบร้อยแล้ว!\n\n📍 จุดรับ: ${pickup}\n🏁 จุดส่ง: ${dropoff}\n\nระบบกำลังพาท่านไปส่งข้อความยืนยันใน LINE...`);
+            alert(`🎉 รับข้อมูลเรียกรถ Calling Taxi เรียบร้อยแล้ว!\n\n📍 จุดรับ: ${pickup}\n🏁 จุดส่ง: ${dropoff}\n📞 เบอร์ติดต่อกลับของคุณ: ${phone}\n\nระบบกำลังเปิด LINE เพื่อให้คุณส่งข้อมูลและคอนเฟิร์มคิวรถกับเราครับ...`);
             
-            // เปิดหน้าไลน์ของผู้ให้บริการเพื่อให้ส่งรายละเอียดต่อได้ทันที
+            // เปิดลิงก์ไลน์เพื่อให้ลูกค้าแชทคุยต่อได้ทันที
             window.open('https://lin.ee/98iQdw6', '_blank');
         }
     </script>
