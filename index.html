@@ -45,7 +45,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-    <!-- Header & Language Switcher (คืนค่าตามรูปภาพเป๊ะๆ) -->
+    <!-- Header & Language Switcher -->
     <header class="bg-[#fbc02d] px-[5%] py-2.5 flex justify-between items-center shadow-md sticky top-0 z-50">
         <a href="#" class="flex items-center gap-3 text-none">
             <img src="logo.png" alt="Calling Taxi Logo" class="h-[50px] w-auto rounded-full shadow-sm">
@@ -144,8 +144,9 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" id="btnSubmit" class="w-full bg-[#fbc02d] hover:bg-[#f9a825] text-black font-bold py-3 px-6 rounded-lg transition duration-300 shadow-sm text-lg mt-2">
-                    <span id="btnSubmitText">ส่งข้อมูลเพื่อเรียกรถ</span>
+                <button type="submit" id="btnSubmit" class="w-full bg-[#fbc02d] hover:bg-[#f9a825] text-black font-bold py-3 px-6 rounded-lg transition duration-300 shadow-sm text-lg mt-2 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-line text-xl"></i>
+                    <span id="btnSubmitText">ส่งข้อมูลเข้า LINE กลุ่ม</span>
                 </button>
             </form>
         </section>
@@ -154,7 +155,7 @@
         <section class="space-y-4">
             <h2 id="servicesHeading" class="text-xl font-bold text-center text-gray-800">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm transition transform hover:-translate-y-1">
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                     <div class="h-48 bg-gray-100 overflow-hidden">
                         <img src="altis.png" alt="Sedan Taxi" class="w-full h-full object-cover">
                     </div>
@@ -163,7 +164,7 @@
                         <p id="fleetSedanDesc" class="text-gray-600 text-sm">รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน</p>
                     </div>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm transition transform hover:-translate-y-1">
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                     <div class="h-48 bg-gray-100 overflow-hidden">
                         <img src="suv.png" alt="SUV Car" class="w-full h-full object-cover">
                     </div>
@@ -172,7 +173,7 @@
                         <p id="fleetSuvDesc" class="text-gray-600 text-sm">รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป</p>
                     </div>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm transition transform hover:-translate-y-1">
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                     <div class="h-48 bg-gray-100 overflow-hidden">
                         <img src="van_03.png" alt="VIP Van" class="w-full h-full object-cover">
                     </div>
@@ -184,7 +185,7 @@
             </div>
         </section>
 
-        <!-- 3 Feature Highlight Cards (คืนค่าตามรูปตัวอย่าง) -->
+        <!-- 3 Feature Highlight Cards -->
         <section class="grid grid-cols-1 gap-4">
             <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm text-center space-y-2">
                 <h3 id="f1Title" class="text-xl font-bold text-[#fbc02d]">⏱️ บริการ 24 ชั่วโมง</h3>
@@ -200,13 +201,13 @@
             </div>
         </section>
 
-        <!-- Bottom Image Banner (คืนค่าตามรูปตัวอย่าง) -->
+        <!-- Bottom Image Banner -->
         <section class="w-full max-w-4xl mx-auto text-center">
             <img src="banner728_90.jpg" alt="แบนเนอร์บริการ Calling Taxi ท่องเที่ยวทั่วไทย" class="w-full h-auto rounded-lg shadow-sm mx-auto">
         </section>
     </main>
 
-    <!-- Footer Area (คืนค่าตามรูปตัวอย่างเป๊ะๆ) -->
+    <!-- Footer Area -->
     <footer class="bg-[#222222] text-white py-8 text-center space-y-4">
         <div class="flex justify-center">
             <img src="logo.png" alt="Calling Taxi Footer Logo" class="h-20 w-20 rounded-full shadow-md">
@@ -214,14 +215,10 @@
         <p id="footerText" class="text-sm px-4 leading-relaxed">
             &copy; 2026 Calling Taxi Service (You have a trip I have a Car). All rights reserved.
         </p>
-        <div id="analyticsWidget" class="flex justify-center items-center opacity-70">
-            <!-- Analytics tracking widget if required -->
-        </div>
     </footer>
 
     <!-- System JavaScript Logic -->
     <script>
-        // Language Translation Master Object
         const langData = {
             TH: {
                 langText: "EN",
@@ -249,7 +246,7 @@
                 placeholderFlight: "เช่น TG123, FD456 (ถ้ามี)",
                 lblNotes: "หมายเหตุ / Special Requests",
                 placeholderNotes: "ระบุรายละเอียดเพิ่มเติม (เช่น ต้องการแวะจุดไหน, มีเด็กหรือผู้สูงอายุมาด้วย เป็นต้น)",
-                btnSubmitText: "ส่งข้อมูลเพื่อเรียกรถ",
+                btnSubmitText: "ส่งข้อมูลเข้า LINE กลุ่ม",
                 servicesHeading: "🚖 รถยนต์ที่เราเปิดให้บริการ",
                 fleetSedanTitle: "แท็กซี่ทั่วไป (Sedan)",
                 fleetSedanDesc: "รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน",
@@ -291,7 +288,7 @@
                 placeholderFlight: "e.g. TG123, FD456 (If any)",
                 lblNotes: "Special Requests / Notes",
                 placeholderNotes: "Any additional details (e.g. side stops, child seats, etc.)",
-                btnSubmitText: "Book a Ride Now",
+                btnSubmitText: "Send Data to LINE Group",
                 servicesHeading: "🚖 Our Service Vehicles Fleet",
                 fleetSedanTitle: "Standard Taxi (Sedan)",
                 fleetSedanDesc: "Toyota Corolla Altis or equivalent. Perfect for 1-4 passengers with standard luggage.",
@@ -364,54 +361,45 @@
             document.documentElement.lang = lang.toLowerCase();
         }
 
-        // Handle Form Submission - ส่งตรงเข้า LINE กลุ่มผ่านระบบหลังบ้าน (Vercel Backend)
-        async function handleFormSubmit(event) {
+        // จัดฟอร์แมตข้อความจองรถด่วนแล้วเปิด LINE ของลูกค้าขึ้นมาให้เลือกกลุ่มส่งทันที
+        function handleFormSubmit(event) {
             event.preventDefault();
             
-            const submitBtn = document.getElementById('btnSubmit');
-            const originalText = document.getElementById('btnSubmitText').innerText;
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const date = document.getElementById('travelDate').value;
+            const pickup = document.getElementById('pickupLocation').value;
+            const dropoff = document.getElementById('dropoffLocation').value;
+            const passengers = document.getElementById('passengers').value;
+            const luggages = document.getElementById('luggages').value;
             
-            document.getElementById('btnSubmitText').innerText = currentLang === 'TH' ? "กำลังส่งข้อมูลการจอง..." : "Sending Booking Details...";
-            submitBtn.disabled = true;
-
             const carSelect = document.getElementById('carType');
-            const bookingDetails = {
-                name: document.getElementById('customerName').value,
-                phone: document.getElementById('customerPhone').value,
-                date: document.getElementById('travelDate').value,
-                passengers: document.getElementById('passengers').value,
-                luggages: document.getElementById('luggages').value,
-                cartype: carSelect.options[carSelect.selectedIndex].text,
-                flight: document.getElementById('flightNum').value || '-',
-                pickup: document.getElementById('pickupLocation').value,
-                dropoff: document.getElementById('dropoffLocation').value,
-                notes: document.getElementById('notes').value || '-'
-            };
+            const carTypeText = carSelect.options[carSelect.selectedIndex].text;
+            
+            const flight = document.getElementById('flightNum').value || '-';
+            const notes = document.getElementById('notes').value || '-';
 
-            // URL ของ Vercel Backend ของคุณ (แก้ไขชื่อ thairide-job-system ให้ตรงกับโปรเจกต์ของคุณ)
-            const BACKEND_URL = 'https://thairide-job-system.vercel.app/api/booking';
+            // สรุปแบบฟอร์มการจองรถเป็นข้อความพิมพ์ส่งใน LINE กลุ่ม
+            const lineMessage = 
+                `📌 ข้อมูลการจองรถด่วน 📌\n` +
+                `---------------------------\n` +
+                `👤 ชื่อลูกค้า: ${name}\n` +
+                `📞 เบอร์ติดต่อ: ${phone}\n` +
+                `📅 วันที่เดินทาง: ${date}\n` +
+                `🛫 รับจาก (ต้นทาง): ${pickup}\n` +
+                `🛬 ส่งที่ (ปลายทาง): ${dropoff}\n` +
+                `👥 จำนวนผู้โดยสาร: ${passengers} คน\n` +
+                `🧳 จำนวนกระเป๋า: ${luggages} ใบ\n` +
+                `🚗 ประเภทรถ: ${carTypeText}\n` +
+                `✈️ ไฟล์ทบิน: ${flight}\n` +
+                `📝 หมายเหตุเพิ่มเติม: ${notes}\n` +
+                `---------------------------`;
 
-            try {
-                const response = await fetch(BACKEND_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(bookingDetails)
-                });
-
-                if (response.ok) {
-                    // ป๊อปอัปแจ้งเตือนแบบใหม่: ลูกค้าไม่ต้องเปิดแอป LINE ข้อมูลเข้ากลุ่มทันที
-                    alert(currentLang === 'TH' ? '🎉 บันทึกข้อมูลเรียบร้อย! ระบบได้ส่งข้อมูลการจองของคุณไปยังทีมงานและแอดมินใน LINE กลุ่มเรียบร้อยแล้วครับ' : '🎉 Your booking request has been submitted successfully to our team.');
-                    document.getElementById('bookingForm').reset();
-                } else {
-                    throw new Error('Server returned an error');
-                }
-            } catch (error) {
-                console.error("Error sending booking:", error);
-                alert(currentLang === 'TH' ? 'เกิดข้อผิดพลาดในการส่งข้อมูลอัตโนมัติ กรุณาลองใหม่อีกครั้ง หรือติดต่อแอดมินโดยตรง' : 'An error occurred. Please try again or contact support.');
-            } finally {
-                document.getElementById('btnSubmitText').innerText = originalText;
-                submitBtn.disabled = false;
-            }
+            // ใช้ระบบ LINE URL Scheme เพื่อเปิดหน้าเลือกแชทกลุ่มอัตโนมัติ
+            const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(lineMessage)}`;
+            
+            // เปิดแอป LINE ทันที
+            window.location.href = lineUrl;
         }
 
         window.onload = function() {
