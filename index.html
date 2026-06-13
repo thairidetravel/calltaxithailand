@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://idetravel.github.io/">
     <meta property="og:title" content="Calling Taxi | บริการเหมารถแท็กซี่ รถตู้ไปต่างจังหวัด 24 ชม.">
     <meta property="og:description" content="จองรถออนไลน์ง่ายๆ เหมารถตู้นำเที่ยว รับส่งสนามบิน เดินทางปลอดภัยกับคนขับมืออาชีพ">
-    <meta property="og:image" content="banner728_90.jpg"> <!-- สามารถเปลี่ยนเป็นรูปหน้าปกหลักของเว็บได้ -->
+    <meta property="og:image" content="banner728_90.jpg">
 
     <!-- นำเข้า Font สวยๆ จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 
         /* Header / Navigation Bar สีเหลืองหลัก */
         header {
-            background-color: #fbc02d; /* สีเหลืองแท็กซี่ */
+            background-color: #fbc02d;
             padding: 10px 5%;
             display: flex;
             justify-content: space-between;
@@ -435,19 +435,19 @@
         </div>
     </header>
 
-    <!-- แถบเมนูย่อยช่วยการนำทางของบอต Google -->
+    <!-- แถบเมนูย่อย -->
     <nav class="sub-nav" aria-label="Main Navigation">
         <a href="#booking" id="nav-booking">จองรถออนไลน์</a>
         <a href="#fleet" id="nav-fleet">ประเภทรถที่ให้บริการ</a>
     </nav>
 
-    <!-- ส่วนหัวโปรโมทหน้าเว็บ (คีย์เวิร์ดหลัก h1) -->
+    <!-- ส่วนหัวโปรโมทหน้าเว็บ -->
     <section class="hero">
         <h1 id="hero-title">Calling Taxi บริการรถรับส่งเหมารถไปต่างจังหวัดทั่วไทย</h1>
         <p id="hero-desc">บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
     </section>
 
-    <!-- คอนเทนต์หลักเพื่อการทำ SEO -->
+    <!-- คอนเทนต์หลัก -->
     <main class="main-container" id="booking">
         
         <!-- แบบฟอร์มจองรถ -->
@@ -466,7 +466,8 @@
                     <label for="car-type" id="lbl-cartype">ประเภทรถที่ต้องการ</label>
                     <select id="car-type">
                         <option value="standard" id="opt-sedan">รถเก๋งทั่วไป Altis (4 ที่นั่ง)</option>
-                        <option value="suv" id="opt-suv">รถคันใหญ่ SUV (7 ที่นั่ง)</option>
+                        <!-- แก้ไข Dropdown: อัปเดตข้อมูลรถ SUV 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ -->
+                        <option value="suv" id="opt-suv">รถ SUV (4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ)</option>
                         <option value="van" id="opt-van">รถตู้ VIP / Van</option>
                     </select>
                 </div>
@@ -510,7 +511,7 @@
         </section>
     </main>
 
-    <!-- โซนแสดงรูปรถยนต์ (ดัก Keyword ใน Image Alt) -->
+    <!-- โซนแสดงรูปรถยนต์ -->
     <section class="fleet-container" id="fleet">
         <h2 class="fleet-title" id="fleet-title">🚖 รถยนต์ที่เราเปิดให้บริการ</h2>
         <div class="fleet-grid">
@@ -526,14 +527,14 @@
                 </div>
             </article>
 
-            <!-- คันที่ 2: SUV -->
+            <!-- คันที่ 2: SUV (แก้ไขเนื้อหารายละเอียดรถตามความต้องการของผู้ใช้) -->
             <article class="car-card">
                 <div class="car-img-wrapper">
-                    <img src="suv.png" alt="บริการรถเหมาคันใหญ่ SUV รถครอบครัว 7 ที่นั่ง">
+                    <img src="suv.png" alt="บริการรถเหมา SUV 4 ที่นั่ง พร้อมสัมภาระและคนขับ">
                 </div>
                 <div class="car-info">
                     <h3 id="car2-title">รถยนต์อเนกประสงค์ (SUV)</h3>
-                    <p id="car2-desc">รถยนต์ไซส์ใหญ่ขนาด 7 ที่นั่ง นั่งสบาย พื้นที่กว้างขวาง เหมาะสำหรับกลุ่มครอบครัวหรือทริปที่มีกระเป๋าเดินทางใบใหญ่</p>
+                    <p id="car2-desc">รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป</p>
                 </div>
             </article>
 
@@ -595,7 +596,7 @@
                 phDropoff: "ระบุสถานที่ปลายทาง หรือจังหวัด",
                 lblCarType: "ประเภทรถที่ต้องการ",
                 optSedan: "รถเก๋งทั่วไป Altis (4 ที่นั่ง)",
-                optSuv: "รถคันใหญ่ SUV (7 ที่นั่ง)",
+                optSuv: "รถ SUV (4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ)", // แก้ไขสคริปต์ TH
                 optVan: "รถตู้ VIP / Van",
                 lblPhone: "เบอร์โทรศัพท์ติดต่อของคุณ",
                 phPhone: "กรอกเบอร์โทรศัพท์ของคุณ",
@@ -607,7 +608,7 @@
                 car1Title: "แท็กซี่ทั่วไป (Sedan)",
                 car1Desc: "รถยนต์ Toyota Corolla Altis หรือเทียบเท่า เหมาะสำหรับการเดินทาง 1-4 ท่าน สัมภาระขนาดมาตรฐาน",
                 car2Title: "รถยนต์อเนกประสงค์ (SUV)",
-                car2Desc: "รถยนต์ไซส์ใหญ่ขนาด 7 ที่นั่ง นั่งสบาย พื้นที่กว้างขวาง เหมาะสำหรับกลุ่มครอบครัวหรือทริปที่มีกระเป๋าเดินทางใบใหญ่",
+                car2Desc: "รถยนต์อเนกประสงค์ SUV รองรับผู้โดยสาร 4 ที่นั่ง พร้อมสัมภาระและพร้อมคนขับ เดินทางนุ่มนวล กว้างขวาง นั่งสบายตลอดทริป", // แก้ไขสคริปต์ TH
                 car3Title: "รถตู้ VIP (Van)",
                 car3Desc: "รถตู้แต่ง VIP เต็มรูปแบบ สิ่งอำนวยความสะดวกครบครัน เหมาะสำหรับการเดินทางเป็นกลุ่มคณะ สัมมนา หรือท่องเที่ยวทางไกล",
                 f1Title: "⏱️ บริการ 24 ชั่วโมง",
@@ -631,7 +632,7 @@
                 phDropoff: "Enter destination, hotel, or province",
                 lblCarType: "Select Vehicle Type",
                 optSedan: "Standard Sedan Altis (4 Seats)",
-                optSuv: "Large SUV (7 Seats)",
+                optSuv: "SUV (4 Seats with Luggage & Driver Included)", // แก้ไขสคริปต์ EN
                 optVan: "VIP Van / Minibus",
                 lblPhone: "Your Phone Number",
                 phPhone: "Enter your phone number",
@@ -643,7 +644,7 @@
                 car1Title: "Standard Taxi (Sedan)",
                 car1Desc: "Toyota Corolla Altis or equivalent. Perfect for 1-4 passengers with standard luggage.",
                 car2Title: "Sport Utility Vehicle (SUV)",
-                car2Desc: "Spacious 7-seater SUV. Comfortable ride with extra large trunk space, great for families.",
+                car2Desc: "Comfortable SUV accommodating up to 4 passengers with luggage and private driver included.", // แก้ไขสคริปต์ EN
                 car3Title: "VIP Van",
                 car3Desc: "Full option luxury VIP Van. Perfect for group travel, business seminars, or long distance trips.",
                 f1Title: "⏱️ 24/7 Support",
