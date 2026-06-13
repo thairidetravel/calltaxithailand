@@ -410,7 +410,7 @@
 </head>
 <body>
 
-    <!-- แถบเมนูกรอบสีเหลืองด้านบนสุด (เอาปุ่มโทรสายด่วนออกแล้ว เหลือเฉพาะปุ่มเปลี่ยนภาษา) -->
+    <!-- แถบเมนูกรอบสีเหลืองด้านบนสุด -->
     <header>
         <a href="#" class="header-logo-wrapper">
             <img src="logo.png" alt="Premium Ride Service Logo">
@@ -422,7 +422,7 @@
         </div>
     </header>
 
-    <!-- แถบเมนูย่อย (อยู่ใต้กรอบสีเหลือง) -->
+    <!-- แถบเมนูย่อย -->
     <div class="sub-nav">
         <a href="#booking" id="nav-booking">จองรถออนไลน์</a>
         <a href="#fleet" id="nav-fleet">ประเภทรถที่ให้บริการ</a>
@@ -434,7 +434,7 @@
         <p id="hero-desc">บริการรถรับส่ง เดินทางท่องเที่ยวทั่วไทย และบริการรถเหมา 24 ชั่วโมง</p>
     </section>
 
-    <!-- คอนเทนต์หลัก (ฟอร์ม & ติดต่อ) -->
+    <!-- คอนเทนต์หลัก -->
     <div class="main-container" id="booking">
         
         <!-- แบบฟอร์มกรอกข้อมูลเรียกแท็กซี่ -->
@@ -481,15 +481,15 @@
             <div class="qr-section-title" id="qr-title">✨ หรือสแกนผ่านแอปพลิเคชัน (You have a trip I have a Car)</div>
             
             <div class="qr-grid">
-                <!-- WeChat -->
+                <!-- WeChat QR Code -->
                 <div class="qr-box">
-                    <img src="Screenshot_20260613_065900_WeChat.jpg" alt="WeChat QR">
+                    <img src="wechat.jpg" alt="WeChat QR">
                     <p style="color: #07C160;">WeChat</p>
                     <span>Tel: 0852242135</span>
                 </div>
-                <!-- WhatsApp -->
+                <!-- WhatsApp QR Code -->
                 <div class="qr-box">
-                    <img src="Screenshot_20260613_065846_WhatsApp.jpg" alt="WhatsApp QR">
+                    <img src="whatsapp.jpg" alt="WhatsApp QR">
                     <p style="color: #25D366;">WhatsApp</p>
                     <span>You Have Trip I have Car</span>
                 </div>
@@ -568,7 +568,6 @@
     </footer>
 
     <script>
-        // คลังข้อมูลเนื้อหา 2 ภาษา
         const translations = {
             th: {
                 hotline: "📞 โทรสายด่วน: 085-2242135",
@@ -646,7 +645,6 @@
 
         let currentLang = 'th';
 
-        // ฟังก์ชันตรวจจับภาษาของเครื่องผู้ใช้งานอัตโนมัติ
         function detectDeviceLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
             if (userLang.toLowerCase().startsWith('en')) {
@@ -656,13 +654,11 @@
             }
         }
 
-        // ฟังก์ชันเมื่อผู้ใช้กดสลับภาษาเอง
         function toggleLanguage() {
             const nextLang = currentLang === 'th' ? 'en' : 'th';
             setLanguage(nextLang);
         }
 
-        // ฟังก์ชันเรนเดอร์คำแปลลงบนหน้าจอ
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
